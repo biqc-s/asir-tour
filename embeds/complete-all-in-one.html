@@ -1,10 +1,17 @@
 <!-- ════════════════════════════════════════════════════════════
-     📱 HEADER - الرأس والقائمة
+     🎯 COMPLETE ALL-IN-ONE - كل شيء في ملف واحد!
+     ════════════════════════════════════════════════════════════
+     انسخ هذا الملف كاملاً والصقه في Carrd كـ embed واحد فقط
      ════════════════════════════════════════════════════════════
      Embed Type: Code
-     Style: Inline (ضعه في أعلى الصفحة)
+     Style: Inline
      ════════════════════════════════════════════════════════════ -->
 
+<!-- ⚙️ SETUP: CSS & Fonts -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/biqc-s/asir-tour@main/styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<!-- 📱 HEADER: الرأس والقائمة -->
 <header class="main-header">
   <div class="nav-container">
     <button class="menu-btn" onclick="window.CHHeader.toggle()" aria-label="فتح القائمة">
@@ -21,19 +28,15 @@
         <div class="lic-number">12345678</div>
       </div>
     </div>
-    <a href="https://wa.me/966XXXXXXXXX" class="wa-btn" aria-label="الواتساب">
-      <i class="fab fa-whatsapp"></i>
-    </a>
   </div>
 </header>
 
-<div id="asir-overlay" class="overlay" onclick="window.CHHeader.toggle()"></div>
-
-<nav class="sidebar" id="asir-sidebar">
+<!-- القائمة الجانبية -->
+<div id="asir-sidebar" class="sidebar">
   <button class="close-btn" onclick="window.CHHeader.toggle()" aria-label="إغلاق القائمة">
     <i class="fas fa-times"></i>
   </button>
-  <div class="sidebar-menu">
+  <nav class="sidebar-menu">
     <a href="#home" class="menu-item" onclick="window.CHHeader.toggle()">
       <i class="fas fa-home"></i>
       <span>الرئيسية</span>
@@ -50,27 +53,62 @@
       <i class="fas fa-phone"></i>
       <span>تواصل معنا</span>
     </a>
-  </div>
-</nav>
+  </nav>
+</div>
 
+<!-- Overlay -->
+<div id="asir-overlay" class="overlay" onclick="window.CHHeader.toggle()"></div>
+
+<!-- 🏛️ FOOTER: الفوتر -->
+<footer class="main-footer">
+  <div class="footer-details">
+    <div class="footer-details-item">
+      <i class="fas fa-cloud"></i>
+      <span><strong>استضافة سحابية</strong> مشمولة</span>
+    </div>
+    <div class="footer-details-item">
+      <i class="fas fa-globe"></i>
+      <span><strong>دومين مجاني</strong> أو ربط دومين</span>
+    </div>
+    <div class="footer-details-item">
+      <i class="fas fa-mobile-alt"></i>
+      <span><strong>تصميم متجاوب</strong> 100%</span>
+    </div>
+  </div>
+  <div class="footer-contact">
+    <a href="https://wa.me/966XXXXXXXXX" class="wa-btn">
+      <i class="fab fa-whatsapp"></i> تواصل واتساب
+    </a>
+  </div>
+  <div class="footer-copy">
+    © 2026 جميع الحقوق محفوظة
+  </div>
+</footer>
+
+<!-- ⚡ JAVASCRIPT: Header Toggle -->
 <script>
 (function() {
   'use strict';
 
-  window.CHHeader = window.CHHeader || {
+  window.CHHeader = {
     toggle: function() {
       const sidebar = document.getElementById('asir-sidebar');
       const overlay = document.getElementById('asir-overlay');
 
-      if (!sidebar || !overlay) return;
+      if (!sidebar || !overlay) {
+        console.error('Sidebar or overlay not found');
+        return;
+      }
 
       const isActive = sidebar.classList.contains('active');
 
       if (isActive) {
+        // Close
         sidebar.classList.remove('active');
         overlay.classList.remove('active');
         document.body.style.overflow = 'auto';
       } else {
+        // Open
         sidebar.classList.add('active');
         overlay.classList.add('active');
         document.body.style.overflow = 'hidden';
@@ -78,7 +116,7 @@
     }
   };
 
-  // Close on Escape key
+  // Auto-close on escape key
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
       const sidebar = document.getElementById('asir-sidebar');
