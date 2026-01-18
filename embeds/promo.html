@@ -1,0 +1,55 @@
+<link rel="stylesheet" href="https://raw.githubusercontent.com/YOUR-USERNAME/asir-tour/main/styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<div class="promo-card" id="promo">
+  <div class="promo-top">
+    <span>
+      <i class="promo-icon fas fa-star"></i>عرض حصري
+    </span>
+    <button class="promo-close" onclick="window.PromoCard.close()" aria-label="إغلاق">
+      ×
+    </button>
+  </div>
+  <div class="promo-content">
+    <strong>عرض خاص للمرشدين بعسير</strong>
+    <div class="promo-price">
+      <span>399 ⃁</span>
+      <small>1500</small>
+    </div>
+    <button class="book-btn" onclick="window.location.href='https://wa.me/966XXXXXXXXX'">
+      احجز الآن على الواتس
+    </button>
+    <div class="hosting-tag">
+      <i class="fas fa-map-location-dot"></i>
+      <span>موقعك الاحترافي + استضافة مجانية</span>
+    </div>
+  </div>
+</div>
+
+<script>
+window.PromoCard = window.PromoCard || {};
+window.PromoCard.close = function() {
+  const promo = document.getElementById('promo');
+  if (promo) {
+    promo.style.animation = 'slideDown 0.3s ease';
+    setTimeout(() => promo.remove(), 300);
+  }
+};
+
+let startY = 0;
+const promo = document.getElementById('promo');
+if (promo) {
+  promo.addEventListener('touchstart', function(e) { startY = e.touches[0].clientY; }, false);
+  promo.addEventListener('touchend', function(e) {
+    if (e.changedTouches[0].clientY - startY > 50) {
+      window.PromoCard.close();
+    }
+  }, false);
+}
+
+setTimeout(() => {
+  if (document.getElementById('promo')) {
+    window.PromoCard.close();
+  }
+}, 30000);
+</script>

@@ -1,0 +1,57 @@
+<link rel="stylesheet" href="https://raw.githubusercontent.com/YOUR-USERNAME/asir-tour/main/styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<header class="main-header">
+  <div class="nav-container">
+    <button class="menu-btn" onclick="window.CHHeader.toggle()" aria-label="فتح القائمة">
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="guide-brand">
+      <div class="guide-name">عبدالله السلمان</div>
+      <div class="guide-sub">مرشد سياحي</div>
+    </div>
+    <div class="license-card">
+      <img src="https://dga.gov.sa/sites/default/files/2023-02/%D9%88%D8%B2%D8%A7%D8%B1%D8%A9%20%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%AD%D8%A9.png" class="gov-logo" alt="ترخيص">
+      <div class="lic-info">
+        <div class="lic-label">ترخيص</div>
+        <div class="lic-number">12345678</div>
+      </div>
+    </div>
+    <a href="https://wa.me/966XXXXXXXXX" class="wa-btn" aria-label="الواتساب">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </div>
+</header>
+
+<div id="overlay" onclick="window.CHHeader.toggle()"></div>
+
+<nav class="sidebar" id="sidebar">
+  <button class="sidebar-close-btn" onclick="window.CHHeader.toggle()" aria-label="إغلاق">×</button>
+  <ul class="sidebar-list">
+    <li><a href="#" onclick="window.CHHeader.toggle()"><i class="fas fa-home"></i> الرئيسية</a></li>
+    <li><a href="#" onclick="window.CHHeader.toggle()"><i class="fas fa-user"></i> عني</a></li>
+    <li><a href="#" onclick="window.CHHeader.toggle()"><i class="fas fa-briefcase"></i> الخدمات</a></li>
+    <li><a href="#" onclick="window.CHHeader.toggle()"><i class="fas fa-images"></i> الصور</a></li>
+    <li><a href="https://wa.me/966XXXXXXXXX"><i class="fas fa-phone"></i> اتصل</a></li>
+  </ul>
+</nav>
+
+<script>
+window.CHHeader = window.CHHeader || {};
+window.CHHeader.toggle = function() {
+  const sidebar = document.getElementById('sidebar');
+  const overlay = document.getElementById('overlay');
+  if (sidebar && overlay) {
+    sidebar.classList.toggle('active');
+    overlay.classList.toggle('active');
+    document.body.style.overflow = sidebar.classList.contains('active') ? 'hidden' : 'auto';
+  }
+};
+document.addEventListener('click', function(e) {
+  const sidebar = document.getElementById('sidebar');
+  const menuBtn = document.querySelector('.menu-btn');
+  if (sidebar && menuBtn && sidebar.classList.contains('active') && !sidebar.contains(e.target) && !menuBtn.contains(e.target)) {
+    window.CHHeader.toggle();
+  }
+});
+</script>

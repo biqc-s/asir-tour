@@ -1,0 +1,383 @@
+<!-- 
+  ═══════════════════════════════════════════════════════════
+  📋 PROMO CARD EMBED FOR CARRD.CO
+  ═══════════════════════════════════════════════════════════
+  
+  ✂️ كيفية الاستخدام:
+  1. اذهب لموقعك في carrd.co
+  2. اختر Add Element > Embed
+  3. اختر Type: Code
+  4. انسخ محتوى هذا الملف بالكامل أدناه (من <style> حتى </script>)
+  5. اختر Style: Inline
+  6. انشر الموقع والتحقق من العرض
+  
+  📌 ملاحظات:
+  - تُغلق البطاقة تلقائياً بعد 30 ثانية
+  - يمكن إغلاقها بالضغط على زر ×
+  - يمكن إغلاقها بالتمرير السريع لأسفل على الجوال
+  
+  ═══════════════════════════════════════════════════════════
+-->
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap');
+
+  /* ===== بطاقة العرض الرئيسية ===== */
+  .promo-card {
+    position: relative;
+    width: 100%;
+    max-width: 380px;
+    margin: 20px auto;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    z-index: 99998;
+    direction: rtl;
+    overflow: hidden;
+    animation: slideUp 0.5s ease;
+    touch-action: manipulation;
+    font-family: 'Tajawal', sans-serif;
+  }
+
+  /* ===== رأس البطاقة ===== */
+  .promo-top {
+    background: linear-gradient(135deg, #1B365D 0%, #2d5a8c 100%);
+    color: #fff;
+    padding: 12px 16px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .promo-top .promo-icon {
+    font-size: 1.3rem;
+    margin-right: 6px;
+    background: rgba(255, 255, 255, 0.2);
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+
+  /* ===== زر الإغلاق ===== */
+  .promo-close {
+    cursor: pointer;
+    font-size: 1.5rem;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+  }
+
+  .promo-close:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: scale(1.1);
+  }
+
+  .promo-close:active {
+    transform: scale(0.95);
+  }
+
+  /* ===== محتوى البطاقة ===== */
+  .promo-content {
+    padding: 24px 20px;
+    margin: 0;
+  }
+
+  .promo-content strong {
+    font-size: 1.1rem;
+    display: block;
+    color: #1B365D;
+    margin-bottom: 15px;
+    font-weight: 800;
+  }
+
+  /* ===== السعر ===== */
+  .promo-price {
+    color: #34b656;
+    font-size: 2rem;
+    font-weight: 900;
+    margin: 15px 0;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+
+  .promo-price small {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 0.8rem;
+    font-weight: normal;
+  }
+
+  /* ===== زر الحجز ===== */
+  .book-btn {
+    display: block;
+    background: linear-gradient(135deg, #1B365D 0%, #2d5a8c 100%);
+    color: #fff !important;
+    text-align: center;
+    padding: 14px 16px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    margin: 15px 0;
+    font-size: 1rem;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    -webkit-appearance: none;
+    box-shadow: 0 4px 12px rgba(27, 54, 93, 0.2);
+    font-family: 'Tajawal', sans-serif;
+  }
+
+  .book-btn:active {
+    transform: scale(0.98);
+    box-shadow: 0 5px 15px rgba(27, 54, 93, 0.4);
+  }
+
+  .book-btn:hover {
+    box-shadow: 0 8px 20px rgba(27, 54, 93, 0.3);
+    transform: translateY(-2px);
+  }
+
+  /* ===== علامة الاستضافة ===== */
+  .hosting-tag {
+    color: #ff4d4d;
+    font-size: 0.85rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 77, 77, 0.3);
+    line-height: 1.4;
+    margin-bottom: 0;
+  }
+
+  .hosting-tag i {
+    font-size: 1.1rem;
+  }
+
+  /* ===== الرسوم المتحركة ===== */
+  @keyframes slideUp {
+    from {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideDown {
+    from {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    to {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+  }
+
+  /* ===== استجابة الشاشات الصغيرة جداً (أقل من 380px) ===== */
+  @media (max-width: 380px) {
+    .promo-card {
+      width: calc(100% - 16px);
+      margin: 12px auto;
+      border-radius: 14px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .promo-top {
+      padding: 8px 12px;
+      font-size: 0.85rem;
+    }
+
+    .promo-top .promo-icon {
+      font-size: 1.1rem;
+      width: 28px;
+      height: 28px;
+    }
+
+    .promo-content {
+      padding: 16px 14px;
+    }
+
+    .promo-content strong {
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+    }
+
+    .promo-price {
+      font-size: 1.5rem;
+      margin: 12px 0;
+    }
+
+    .book-btn {
+      padding: 10px 12px;
+      font-size: 0.9rem;
+      margin: 12px 0;
+    }
+
+    .hosting-tag {
+      font-size: 0.75rem;
+      margin-top: 10px;
+      padding-top: 10px;
+    }
+
+    .hosting-tag i {
+      font-size: 0.9rem;
+    }
+  }
+
+  /* ===== استجابة الهواتف العادية (380px - 640px) ===== */
+  @media (max-width: 640px) {
+    .promo-card {
+      width: calc(100% - 16px);
+      margin: 16px auto;
+      border-radius: 16px;
+    }
+
+    .promo-top {
+      padding: 10px 14px;
+      font-size: 0.9rem;
+    }
+
+    .promo-content {
+      padding: 18px 16px;
+    }
+
+    .promo-content strong {
+      font-size: 1rem;
+      margin-bottom: 12px;
+    }
+
+    .promo-price {
+      font-size: 1.7rem;
+    }
+
+    .book-btn {
+      padding: 12px 14px;
+      font-size: 0.95rem;
+    }
+
+    .hosting-tag {
+      font-size: 0.8rem;
+      margin-top: 10px;
+      padding-top: 10px;
+    }
+  }
+
+  /* ===== استجابة التابلت والشاشات الكبيرة (641px+) ===== */
+  @media (min-width: 641px) {
+    .promo-card {
+      width: 100%;
+      max-width: 420px;
+      margin: 30px auto;
+    }
+  }
+</style>
+
+<!-- ===== PROMO CARD HTML ===== -->
+<div class="promo-card" id="promo">
+  <!-- رأس البطاقة -->
+  <div class="promo-top">
+    <span>
+      <i class="promo-icon fas fa-star"></i>عرض حصري
+    </span>
+    <button class="promo-close" onclick="closePromo()" aria-label="إغلاق العرض">
+      &times;
+    </button>
+  </div>
+
+  <!-- محتوى البطاقة -->
+  <div class="promo-content">
+    <strong>عرض خاص للمرشدين بعسير</strong>
+
+    <div class="promo-price">
+      <span>399 ⃁</span>
+      <small>1500</small>
+    </div>
+
+    <button class="book-btn" onclick="bookNow()">
+      احجز الآن على الواتس
+    </button>
+
+    <div class="hosting-tag">
+      <i class="fas fa-map-location-dot"></i>
+      <span>موقعك الاحترافي + استضافة مجانية</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PROMO CARD SCRIPT ===== -->
+<script>
+// ===== دالة إغلاق البطاقة =====
+function closePromo() {
+  const promo = document.getElementById('promo');
+  if (!promo) return;
+  promo.style.animation = 'slideDown 0.3s ease';
+  setTimeout(() => {
+    if (promo && promo.parentNode) {
+      promo.remove();
+    }
+  }, 300);
+}
+
+// ===== دالة الحجز =====
+function bookNow() {
+  window.location.href = 'https://wa.me/966XXXXXXXXX';
+}
+
+// ===== تحسين الأداء على الجوال =====
+if (navigator.userAgent.match(/iPhone|iPad|iPod|Android/i)) {
+  document.addEventListener('touchend', function() {}, false);
+}
+
+// ===== إغلاق البطاقة بالتمرير السريع لأسفل =====
+(function() {
+  const promo = document.getElementById('promo');
+  if (!promo) return;
+
+  let startY = 0;
+
+  promo.addEventListener('touchstart', function(e) {
+    startY = e.touches[0].clientY;
+  }, false);
+
+  promo.addEventListener('touchend', function(e) {
+    const endY = e.changedTouches[0].clientY;
+    const swipeDistance = endY - startY;
+
+    if (swipeDistance > 50) {
+      closePromo();
+    }
+  }, false);
+})();
+
+// ===== مسح البطاقة بعد 30 ثانية إذا لم يتم التفاعل معها =====
+setTimeout(() => {
+  const promo = document.getElementById('promo');
+  if (promo && promo.parentNode) {
+    closePromo();
+  }
+}, 30000);
+</script>
