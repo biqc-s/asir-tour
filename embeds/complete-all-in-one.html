@@ -1,0 +1,105 @@
+<!-- ════════════════════════════════════════════════════════════
+     🎯 COMPLETE ALL-IN-ONE - كل شيء في ملف واحد!
+     ════════════════════════════════════════════════════════════
+     انسخ هذا الملف كاملاً والصقه في Carrd كـ embed واحد فقط
+     ════════════════════════════════════════════════════════════
+     Embed Type: Code
+     Style: Inline
+     ════════════════════════════════════════════════════════════ -->
+
+<!-- ⚙️ SETUP: CSS & Fonts -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/biqc-s/asir-tour@main/styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<!-- 📱 HEADER: الرأس والقائمة -->
+<header class="main-header">
+  <div class="nav-container">
+    <button class="menu-btn" onclick="window.CHHeader.toggle()" aria-label="فتح القائمة">
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="guide-brand">
+      <div class="guide-name">عبدالله السلمان</div>
+      <div class="guide-sub">مرشد سياحي</div>
+    </div>
+    <div class="license-card">
+      <img src="https://dga.gov.sa/sites/default/files/2023-02/%D9%88%D8%B2%D8%A7%D8%B1%D8%A9%20%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%AD%D8%A9.png" class="gov-logo" alt="ترخيص">
+      <div class="lic-info">
+        <div class="lic-label">ترخيص</div>
+        <div class="lic-number">12345678</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- القائمة الجانبية -->
+<div id="sidebar" class="sidebar">
+  <button class="close-btn" onclick="window.CHHeader.toggle()" aria-label="إغلاق القائمة">
+    <i class="fas fa-times"></i>
+  </button>
+  <nav class="sidebar-menu">
+    <a href="#home" class="menu-item">
+      <i class="fas fa-home"></i>
+      <span>الرئيسية</span>
+    </a>
+    <a href="#about" class="menu-item">
+      <i class="fas fa-user"></i>
+      <span>عن المرشد</span>
+    </a>
+    <a href="#services" class="menu-item">
+      <i class="fas fa-list"></i>
+      <span>الخدمات</span>
+    </a>
+    <a href="#contact" class="menu-item">
+      <i class="fas fa-phone"></i>
+      <span>تواصل معنا</span>
+    </a>
+  </nav>
+</div>
+
+<!-- Overlay -->
+<div id="overlay" class="overlay" onclick="window.CHHeader.toggle()"></div>
+
+<!-- 🏛️ FOOTER: الفوتر -->
+<footer class="main-footer">
+  <div class="footer-details">
+    <div class="footer-details-item">
+      <i class="fas fa-cloud"></i>
+      <span><strong>استضافة سحابية</strong> مشمولة</span>
+    </div>
+    <div class="footer-details-item">
+      <i class="fas fa-globe"></i>
+      <span><strong>دومين مجاني</strong> أو ربط دومين</span>
+    </div>
+    <div class="footer-details-item">
+      <i class="fas fa-mobile-alt"></i>
+      <span><strong>تصميم متجاوب</strong> 100%</span>
+    </div>
+  </div>
+  <div class="footer-contact">
+    <a href="https://wa.me/966XXXXXXXXX" class="wa-btn">
+      <i class="fab fa-whatsapp"></i> تواصل واتساب
+    </a>
+  </div>
+  <div class="footer-copy">
+    © 2026 جميع الحقوق محفوظة
+  </div>
+</footer>
+
+<!-- ⚡ JAVASCRIPT: Header Toggle -->
+<script>
+(function() {
+  window.CHHeader = {
+    toggle: function() {
+      const sidebar = document.getElementById('sidebar');
+      const overlay = document.getElementById('overlay');
+      const body = document.body;
+
+      if (sidebar && overlay) {
+        sidebar.classList.toggle('active');
+        overlay.classList.toggle('active');
+        body.style.overflow = sidebar.classList.contains('active') ? 'hidden' : 'auto';
+      }
+    }
+  };
+})();
+</script>
