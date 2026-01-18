@@ -150,45 +150,55 @@
 }
 
 /* القائمة الجانبية */
-#overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.3);
-  z-index: 1000;
+#overlay,
+#asir-overlay {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: rgba(0,0,0,0.5) !important;
+  z-index: 99998 !important;
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s;
+  pointer-events: none;
 }
 
-#overlay.active {
-  opacity: 1;
-  visibility: visible;
+#overlay.active,
+#asir-overlay.active {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
 }
 
-.sidebar {
-  position: fixed;
-  top: 0;
-  right: -85vw;
-  width: 85vw;
-  max-width: 280px;
-  height: 100vh;
-  background: #fff;
-  z-index: 1001;
+.sidebar,
+#sidebar,
+#asir-sidebar {
+  position: fixed !important;
+  top: 0 !important;
+  right: -85vw !important;
+  width: 85vw !important;
+  max-width: 280px !important;
+  height: 100vh !important;
+  background: #fff !important;
+  z-index: 99999 !important;
   transition: right 0.4s;
   padding: 16px;
   overflow-y: auto;
   direction: rtl;
   margin: 0;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.2);
 }
 
-.sidebar.active {
-  right: 0;
+.sidebar.active,
+#sidebar.active,
+#asir-sidebar.active {
+  right: 0 !important;
 }
 
-.sidebar-close-btn {
+.sidebar-close-btn,
+.close-btn {
   background: none;
   border: none;
   font-size: 1.8rem;
@@ -197,6 +207,16 @@
   float: left;
   width: 40px;
   height: 40px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar-menu {
+  list-style: none;
+  margin-top: 60px;
+  clear: both;
   padding: 0;
 }
 
@@ -207,21 +227,35 @@
   padding: 0;
 }
 
+.menu-item,
 .sidebar-list a {
   display: flex;
   align-items: center;
   gap: 12px;
   padding: 14px 12px;
-  color: #1B365D;
-  text-decoration: none;
+  color: #1B365D !important;
+  text-decoration: none !important;
   font-weight: 700;
   border-bottom: 1px solid #f5f5f5;
   transition: all 0.3s;
   margin: 0;
+  font-family: 'Tajawal', sans-serif;
 }
 
+.menu-item:hover,
+.sidebar-list a:hover {
+  background: #f0f0f0;
+}
+
+.menu-item:active,
 .sidebar-list a:active {
-  background: #f5f5f5;
+  background: #e0e0e0;
+}
+
+.menu-item i {
+  font-size: 1.2rem;
+  width: 24px;
+  text-align: center;
 }
 
 /* Header Mobile */

@@ -27,35 +27,65 @@
   </div>
 </header>
 
-<div id="overlay" onclick="window.CHHeader.toggle()"></div>
+<div id="asir-overlay" class="overlay" onclick="window.CHHeader.toggle()"></div>
 
-<nav class="sidebar" id="sidebar">
-  <button class="sidebar-close-btn" onclick="window.CHHeader.toggle()" aria-label="إغلاق">×</button>
-  <ul class="sidebar-list">
-    <li><a href="#" onclick="window.CHHeader.toggle()"><i class="fas fa-home"></i> الرئيسية</a></li>
-    <li><a href="#" onclick="window.CHHeader.toggle()"><i class="fas fa-user"></i> عني</a></li>
-    <li><a href="#" onclick="window.CHHeader.toggle()"><i class="fas fa-briefcase"></i> الخدمات</a></li>
-    <li><a href="#" onclick="window.CHHeader.toggle()"><i class="fas fa-images"></i> الصور</a></li>
-    <li><a href="https://wa.me/966XXXXXXXXX"><i class="fas fa-phone"></i> اتصل</a></li>
-  </ul>
+<nav class="sidebar" id="asir-sidebar">
+  <button class="close-btn" onclick="window.CHHeader.toggle()" aria-label="إغلاق القائمة">
+    <i class="fas fa-times"></i>
+  </button>
+  <div class="sidebar-menu">
+    <a href="#home" class="menu-item" onclick="window.CHHeader.toggle()">
+      <i class="fas fa-home"></i>
+      <span>الرئيسية</span>
+    </a>
+    <a href="#about" class="menu-item" onclick="window.CHHeader.toggle()">
+      <i class="fas fa-user"></i>
+      <span>عن المرشد</span>
+    </a>
+    <a href="#services" class="menu-item" onclick="window.CHHeader.toggle()">
+      <i class="fas fa-list"></i>
+      <span>الخدمات</span>
+    </a>
+    <a href="#contact" class="menu-item" onclick="window.CHHeader.toggle()">
+      <i class="fas fa-phone"></i>
+      <span>تواصل معنا</span>
+    </a>
+  </div>
 </nav>
 
 <script>
-window.CHHeader = window.CHHeader || {};
-window.CHHeader.toggle = function() {
-  const sidebar = document.getElementById('sidebar');
-  const overlay = document.getElementById('overlay');
-  if (sidebar && overlay) {
-    sidebar.classList.toggle('active');
-    overlay.classList.toggle('active');
-    document.body.style.overflow = sidebar.classList.contains('active') ? 'hidden' : 'auto';
-  }
-};
-document.addEventListener('click', function(e) {
-  const sidebar = document.getElementById('sidebar');
-  const menuBtn = document.querySelector('.menu-btn');
-  if (sidebar && menuBtn && sidebar.classList.contains('active') && !sidebar.contains(e.target) && !menuBtn.contains(e.target)) {
-    window.CHHeader.toggle();
-  }
-});
+(function() {
+  'use strict';
+
+  window.CHHeader = window.CHHeader || {
+    toggle: function() {
+      const sidebar = document.getElementById('asir-sidebar');
+      const overlay = document.getElementById('asir-overlay');
+
+      if (!sidebar || !overlay) return;
+
+      const isActive = sidebar.classList.contains('active');
+
+      if (isActive) {
+        sidebar.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      } else {
+        sidebar.classList.add('active');
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+  };
+
+  // Close on Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      const sidebar = document.getElementById('asir-sidebar');
+      if (sidebar && sidebar.classList.contains('active')) {
+        window.CHHeader.toggle();
+      }
+    }
+  });
+})();
 </script>
