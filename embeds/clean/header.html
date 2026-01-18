@@ -1,0 +1,85 @@
+<!-- ════════════════════════════════════════════════════════════
+     📱 HEADER - Clean HTML Only
+     ════════════════════════════════════════════════════════════
+     Embed Type: Code
+     Style: Inline
+
+     ملاحظة: يجب إضافة Setup أولاً قبل هذا الـ embed!
+     ════════════════════════════════════════════════════════════ -->
+
+<header class="main-header">
+  <div class="nav-container">
+    <button class="menu-btn" onclick="window.CHHeader.toggle()" aria-label="فتح القائمة">
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="guide-brand">
+      <div class="guide-name">عبدالله السلمان</div>
+      <div class="guide-sub">مرشد سياحي</div>
+    </div>
+    <div class="license-card">
+      <img src="https://dga.gov.sa/sites/default/files/2023-02/%D9%88%D8%B2%D8%A7%D8%B1%D8%A9%20%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%AD%D8%A9.png" class="gov-logo" alt="ترخيص">
+      <div class="lic-info">
+        <div class="lic-label">ترخيص</div>
+        <div class="lic-number">12345678</div>
+      </div>
+    </div>
+    <a href="https://wa.me/966XXXXXXXXX" class="wa-btn" aria-label="الواتساب">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </div>
+</header>
+
+<div id="asir-overlay" class="overlay" onclick="window.CHHeader.toggle()"></div>
+
+<nav class="sidebar" id="asir-sidebar">
+  <button class="close-btn" onclick="window.CHHeader.toggle()" aria-label="إغلاق القائمة">
+    <i class="fas fa-times"></i>
+  </button>
+  <div class="sidebar-menu">
+    <a href="#home" class="menu-item" onclick="window.CHHeader.toggle()">
+      <i class="fas fa-home"></i>
+      <span>الرئيسية</span>
+    </a>
+    <a href="#about" class="menu-item" onclick="window.CHHeader.toggle()">
+      <i class="fas fa-user"></i>
+      <span>عن المرشد</span>
+    </a>
+    <a href="#services" class="menu-item" onclick="window.CHHeader.toggle()">
+      <i class="fas fa-list"></i>
+      <span>الخدمات</span>
+    </a>
+    <a href="#contact" class="menu-item" onclick="window.CHHeader.toggle()">
+      <i class="fas fa-phone"></i>
+      <span>تواصل معنا</span>
+    </a>
+  </div>
+</nav>
+
+<script>
+(function() {
+  'use strict';
+  window.CHHeader = window.CHHeader || {
+    toggle: function() {
+      const sidebar = document.getElementById('asir-sidebar');
+      const overlay = document.getElementById('asir-overlay');
+      if (!sidebar || !overlay) return;
+      const isActive = sidebar.classList.contains('active');
+      if (isActive) {
+        sidebar.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.style.overflow = 'auto';
+      } else {
+        sidebar.classList.add('active');
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+  };
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      const sidebar = document.getElementById('asir-sidebar');
+      if (sidebar && sidebar.classList.contains('active')) window.CHHeader.toggle();
+    }
+  });
+})();
+</script>
