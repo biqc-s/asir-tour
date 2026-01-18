@@ -1,0 +1,188 @@
+═══════════════════════════════════════════════════════════════════════════════
+🚀 QUICK START GUIDE - دليل البدء السريع
+═══════════════════════════════════════════════════════════════════════════════
+
+📌 ملخص المشروع الحالي:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ Git Repository جاهز محلياً
+✅ 3 ملفات embeds مُحسّنة وآمنة
+✅ CSS مركزي في styles.css
+✅ هيكل منظم وحديث
+
+
+═══════════════════════════════════════════════════════════════════════════════
+🎯 الخطوات التالية (مهمة جداً!):
+═══════════════════════════════════════════════════════════════════════════════
+
+📋 الخطوة 1: إنشاء GitHub Repository
+────────────────────────────────────
+
+1. اذهب لـ: https://github.com/new
+2. Repository name: asir-tour
+3. Description: Professional tourism guide website embeds
+4. Public ✓
+5. اضغط: Create repository
+
+ستظهر لك صفحة بها أوامر. انسخ هذا الجزء:
+
+   git remote add origin https://github.com/YOUR-USERNAME/asir-tour.git
+   git branch -M main
+   git push -u origin main
+
+
+📋 الخطوة 2: رفع المشروع على GitHub
+──────────────────────────────────
+
+افتح Terminal/PowerShell وروح للمجلد:
+
+   cd c:\Users\SV\Desktop\asir_tour
+
+ثم روح هنا وأضف اسمك (غيّر YOUR-USERNAME بـ اسمك على GitHub):
+
+   git remote add origin https://github.com/YOUR-USERNAME/asir-tour.git
+   git branch -M main
+   git push -u origin main
+
+سيطلب منك تسجيل الدخول - استخدم GitHub username و password (أو personal token).
+
+
+📋 الخطوة 3: استخدام في Carrd
+──────────────────────────────
+
+بعد الرفع على GitHub، اذهب لـ Carrd.co وأضف 3 embeds:
+
+**الخطوة 3.1 - الرأس (Header)**
+1. Add Element → Embed
+2. Type: Code
+3. Style: Inline
+4. انسخ محتوى هذا الملف (غيّر YOUR-USERNAME):
+
+<link rel="stylesheet" href="https://raw.githubusercontent.com/YOUR-USERNAME/asir-tour/main/styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<header class="main-header">
+  <div class="nav-container">
+    <button class="menu-btn" onclick="window.CHHeader.toggle()" aria-label="فتح القائمة">
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="guide-brand">
+      <div class="guide-name">عبدالله السلمان</div>
+      <div class="guide-sub">مرشد سياحي</div>
+    </div>
+    <div class="license-card">
+      <img src="https://dga.gov.sa/sites/default/files/2023-02/%D9%88%D8%B2%D8%A7%D8%B1%D8%A9%20%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D8%AD%D8%A9.png" class="gov-logo" alt="ترخيص">
+      <div class="lic-info">
+        <div class="lic-label">ترخيص</div>
+        <div class="lic-number">12345678</div>
+      </div>
+    </div>
+    <a href="https://wa.me/966XXXXXXXXX" class="wa-btn" aria-label="الواتساب">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </div>
+</header>
+
+<div id="overlay" onclick="window.CHHeader.toggle()"></div>
+
+<nav class="sidebar" id="sidebar">
+  <button class="sidebar-close-btn" onclick="window.CHHeader.toggle()" aria-label="إغلاق">×</button>
+  <ul class="sidebar-list">
+    <li><a href="#" onclick="window.CHHeader.toggle()"><i class="fas fa-home"></i> الرئيسية</a></li>
+    <li><a href="#" onclick="window.CHHeader.toggle()"><i class="fas fa-user"></i> عني</a></li>
+    <li><a href="#" onclick="window.CHHeader.toggle()"><i class="fas fa-briefcase"></i> الخدمات</a></li>
+    <li><a href="#" onclick="window.CHHeader.toggle()"><i class="fas fa-images"></i> الصور</a></li>
+    <li><a href="https://wa.me/966XXXXXXXXX"><i class="fas fa-phone"></i> اتصل</a></li>
+  </ul>
+</nav>
+
+<script>
+window.CHHeader = window.CHHeader || {};
+window.CHHeader.toggle = function() {
+  const sidebar = document.getElementById('sidebar');
+  const overlay = document.getElementById('overlay');
+  if (sidebar && overlay) {
+    sidebar.classList.toggle('active');
+    overlay.classList.toggle('active');
+    document.body.style.overflow = sidebar.classList.contains('active') ? 'hidden' : 'auto';
+  }
+};
+document.addEventListener('click', function(e) {
+  const sidebar = document.getElementById('sidebar');
+  const menuBtn = document.querySelector('.menu-btn');
+  if (sidebar && menuBtn && sidebar.classList.contains('active') && !sidebar.contains(e.target) && !menuBtn.contains(e.target)) {
+    window.CHHeader.toggle();
+  }
+});
+</script>
+
+
+**الخطوة 3.2 - بطاقة العرض (Promo)**
+1. Add Element → Embed
+2. Type: Code
+3. Style: Inline
+4. انسخ من: embeds/promo.html (في ملف المشروع)
+   غيّر YOUR-USERNAME بـ اسمك
+
+
+**الخطوة 3.3 - الفوتر (Footer)**
+1. Add Element → Embed
+2. Type: Code
+3. Style: Hidden
+4. Body Position: Body End
+5. انسخ من: embeds/footer.html (في ملف المشروع)
+   غيّر YOUR-USERNAME بـ اسمك
+
+
+═══════════════════════════════════════════════════════════════════════════════
+📝 تحديثات مستقبلية - إذا أردت تعديل شيء ما:
+═══════════════════════════════════════════════════════════════════════════════
+
+مثال: تريد تغيير لون الزر الأخضر في الهيدر
+
+1. افتح: styles.css
+2. ابحث عن: .wa-btn { background: #27A148; }
+3. غيّر اللون
+4. اذهب للـ Terminal:
+
+   cd c:\Users\SV\Desktop\asir_tour
+   git add styles.css
+   git commit -m "تحديث لون الواتس بات"
+   git push
+
+5. اضغط Refresh على موقع Carrd.co
+
+
+═══════════════════════════════════════════════════════════════════════════════
+💡 ملفات مهمة:
+═══════════════════════════════════════════════════════════════════════════════
+
+📄 styles.css ⭐ (الملف الأساسي)
+   ← كل الأنماط (الألوان، الخطوط، الحجم، إلخ)
+   ← تحديثات هنا تنعكس على الموقع مباشرة
+
+📁 embeds/ (مجلد الـ embeds)
+   ├── header.html (الرأس الكامل)
+   ├── promo.html (بطاقة العرض)
+   └── footer.html (الفوتر الكامل)
+
+📄 README.md
+   ← دليل المشروع (اختياري)
+
+📄 .gitignore
+   ← ملفات لا تُرفع على GitHub
+
+
+═══════════════════════════════════════════════════════════════════════════════
+⚠️ تذكير مهم:
+═══════════════════════════════════════════════════════════════════════════════
+
+✓ YOUR-USERNAME في ملفات embeds = اسمك على GitHub
+✓ كل URL يبدأ بـ: https://raw.githubusercontent.com/YOUR-USERNAME/asir-tour/main/
+✓ احرص على عمل git push بعد كل تحديث
+✓ اضغط Refresh على Carrd بعد التحديث
+
+
+═══════════════════════════════════════════════════════════════════════════════
+
+✨ أنت الآن جاهز للعمل! 🚀
