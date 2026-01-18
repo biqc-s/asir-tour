@@ -1,923 +1,159 @@
 /* ═══════════════════════════════════════════════════════════════
-   📋 CENTRAL CSS REPOSITORY FOR CARRD.CO EMBEDS
+   🎨 CSS للموقع - ملف واحد فقط
    ═══════════════════════════════════════════════════════════════
-   
-   استخدم هذا الملف في موقعك على carrd.co كـ external stylesheet
-   لتجنب تكرار CSS في كل embed
-*/
+   رابط الاستخدام:
+   https://cdn.jsdelivr.net/gh/biqc-s/asir-tour@main/styles.css
+   ═══════════════════════════════════════════════════════════════ */
 
 @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
 
 /* ═══════════════════════════════════════════════════════════════
-   🎨 HEADER STYLES - .main-header
+   🎯 إعدادات عامة
    ═══════════════════════════════════════════════════════════════ */
 
-.main-header {
-  position: relative;
-  width: 100%;
-  background: #fff;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-  padding: 12px 15px;
-  direction: rtl;
-  font-family: 'Tajawal', sans-serif;
-}
-
-.main-header,
-.main-header * {
+* {
   box-sizing: border-box;
-}
-
-.nav-container {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  max-width: 100%;
   margin: 0;
   padding: 0;
 }
 
-/* زر القائمة */
-.menu-btn {
-  background: #f0f0f0;
-  border: none;
-  border-radius: 8px;
-  width: 44px;
-  height: 44px;
-  font-size: 1.1rem;
-  color: #1B365D;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  transition: all 0.3s;
-  margin: 0;
-  padding: 0;
-}
-
-.menu-btn:active {
-  background: #e0e0e0;
-  transform: scale(0.95);
-}
-
-/* الاسم */
-.guide-brand {
-  flex: 1;
-  text-align: center;
-  min-width: 0;
-  padding: 0 5px;
-  margin: 0;
-}
-
-.guide-name {
-  color: #8B2635;
-  font-weight: 800;
-  font-size: 0.9rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin: 0;
-}
-
-.guide-sub {
-  color: #1B365D;
-  font-size: 0.6rem;
-  font-weight: 700;
-  margin: 0;
-}
-
-/* بطاقة الترخيص */
-.license-card {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  background: #fafafa;
-  padding: 4px 8px;
-  border-radius: 6px;
-  flex-shrink: 0;
-  margin: 0;
-}
-
-.gov-logo {
-  height: 24px;
-  width: auto;
-}
-
-.lic-info {
-  display: flex;
-  flex-direction: column;
-  line-height: 1;
-  border-right: 1px solid #eee;
-  padding-right: 6px;
-  margin: 0;
-}
-
-.lic-label {
-  font-size: 0.45rem;
-  color: #999;
-  font-weight: 700;
-}
-
-.lic-number {
-  font-size: 0.65rem;
-  color: #1B365D;
-  font-weight: 800;
-}
-
-/* زر واتس */
-.wa-btn {
-  background: #27A148;
-  color: #fff !important;
-  width: 44px;
-  height: 44px;
-  border-radius: 8px;
-  border: none;
-  font-size: 1.2rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  text-decoration: none;
-  transition: all 0.3s;
-  margin: 0;
-  padding: 0;
-}
-
-.wa-btn:active {
-  transform: scale(0.95);
-}
-
-/* القائمة الجانبية */
-#overlay,
-#asir-overlay {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  background: rgba(0,0,0,0.5) !important;
-  z-index: 99998 !important;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s;
-  pointer-events: none;
-}
-
-#overlay.active,
-#asir-overlay.active {
-  opacity: 1 !important;
-  visibility: visible !important;
-  pointer-events: auto !important;
-}
-
-.sidebar,
-#sidebar,
-#asir-sidebar {
-  position: fixed !important;
-  top: 0 !important;
-  right: -85vw !important;
-  width: 85vw !important;
-  max-width: 280px !important;
-  height: 100vh !important;
-  background: #fff !important;
-  z-index: 99999 !important;
-  transition: right 0.4s;
-  padding: 16px;
-  overflow-y: auto;
-  direction: rtl;
-  margin: 0;
-  box-shadow: -2px 0 10px rgba(0,0,0,0.2);
-}
-
-.sidebar.active,
-#sidebar.active,
-#asir-sidebar.active {
-  right: 0 !important;
-}
-
-.sidebar-close-btn,
-.close-btn {
-  background: none;
-  border: none;
-  font-size: 1.8rem;
-  color: #8B2635;
-  cursor: pointer;
-  float: left;
-  width: 40px;
-  height: 40px;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.sidebar-menu {
-  list-style: none;
-  margin-top: 60px;
-  clear: both;
-  padding: 0;
-}
-
-.sidebar-list {
-  list-style: none;
-  margin-top: 20px;
-  clear: both;
-  padding: 0;
-}
-
-.menu-item,
-.sidebar-list a {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 14px 12px;
-  color: #1B365D !important;
-  text-decoration: none !important;
-  font-weight: 700;
-  border-bottom: 1px solid #f5f5f5;
-  transition: all 0.3s;
-  margin: 0;
+body {
   font-family: 'Tajawal', sans-serif;
+  direction: rtl;
+  background: #fff;
+  color: #333;
 }
-
-.menu-item:hover,
-.sidebar-list a:hover {
-  background: #f0f0f0;
-}
-
-.menu-item:active,
-.sidebar-list a:active {
-  background: #e0e0e0;
-}
-
-.menu-item i {
-  font-size: 1.2rem;
-  width: 24px;
-  text-align: center;
-}
-
-/* Header Mobile */
-@media (max-width: 380px) {
-  .main-header {
-    padding: 8px 10px;
-  }
-
-  .menu-btn, .wa-btn {
-    width: 40px;
-    height: 40px;
-    font-size: 1rem;
-  }
-
-  .guide-name {
-    font-size: 0.8rem;
-  }
-
-  .gov-logo {
-    height: 20px;
-  }
-}
-
-@media (max-width: 640px) {
-  .main-header {
-    padding: 10px 12px;
-  }
-
-  .menu-btn, .wa-btn {
-    width: 42px;
-    height: 42px;
-  }
-}
-
 
 /* ═══════════════════════════════════════════════════════════════
-   💎 PROMO CARD STYLES - .promo-card
+   📱 HEADER - الرأس
    ═══════════════════════════════════════════════════════════════ */
 
-.promo-card {
-  position: relative;
-  width: 100%;
-  max-width: 380px;
-  margin: 20px auto;
-  background: #fff;
-  border-radius: 20px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-  z-index: 99998;
-  direction: rtl;
-  overflow: hidden;
-  animation: slideUp 0.5s ease;
-  touch-action: manipulation;
-  font-family: 'Tajawal', sans-serif;
+.site-header {
+  background: linear-gradient(135deg, #1B365D 0%, #2d4a7c 100%);
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
 }
 
-/* رأس البطاقة */
-.promo-top {
-  background: linear-gradient(135deg, #1B365D 0%, #2d5a8c 100%);
-  color: #fff;
-  padding: 12px 16px;
-  font-size: 0.95rem;
-  font-weight: 700;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.promo-top .promo-icon {
-  font-size: 1.3rem;
-  margin-right: 6px;
-  background: rgba(255, 255, 255, 0.2);
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-}
-
-/* زر الإغلاق */
-.promo-close {
-  cursor: pointer;
-  font-size: 1.5rem;
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  transition: all 0.3s;
-  background: rgba(255, 255, 255, 0.1);
-  border: none;
-  color: #fff;
-  font-weight: bold;
-  padding: 0;
-  margin: 0;
-}
-
-.promo-close:hover {
-  background: rgba(255, 255, 255, 0.25);
-  transform: scale(1.1);
-}
-
-.promo-close:active {
-  transform: scale(0.95);
-}
-
-/* محتوى البطاقة */
-.promo-content {
-  padding: 24px 20px;
-  margin: 0;
-}
-
-.promo-content strong {
-  font-size: 1.1rem;
-  display: block;
-  color: #1B365D;
-  margin-bottom: 15px;
-  font-weight: 800;
-}
-
-/* السعر */
-.promo-price {
-  color: #34b656;
+.site-title {
   font-size: 2rem;
-  font-weight: 900;
-  margin: 15px 0;
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
-}
-
-.promo-price small {
-  text-decoration: line-through;
-  color: #999;
-  font-size: 0.8rem;
-  font-weight: normal;
-}
-
-/* زر الحجز */
-.book-btn {
-  display: block;
-  background: linear-gradient(135deg, #1B365D 0%, #2d5a8c 100%);
-  color: #fff !important;
-  text-align: center;
-  padding: 14px 16px;
-  border-radius: 12px;
-  text-decoration: none;
-  font-weight: 700;
-  margin: 15px 0;
-  font-size: 1rem;
-  transition: all 0.3s;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  -webkit-appearance: none;
-  box-shadow: 0 4px 12px rgba(27, 54, 93, 0.2);
-  font-family: 'Tajawal', sans-serif;
-}
-
-.book-btn:active {
-  transform: scale(0.98);
-  box-shadow: 0 5px 15px rgba(27, 54, 93, 0.4);
-}
-
-.book-btn:hover {
-  box-shadow: 0 8px 20px rgba(27, 54, 93, 0.3);
-  transform: translateY(-2px);
-}
-
-/* علامة الاستضافة */
-.hosting-tag {
-  color: #ff4d4d;
-  font-size: 0.85rem;
   font-weight: 800;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  margin-top: 12px;
-  padding-top: 12px;
-  border-top: 1px solid rgba(255, 77, 77, 0.3);
-  line-height: 1.4;
-  margin-bottom: 0;
+  margin-bottom: 10px;
 }
 
-.hosting-tag i {
-  font-size: 1.1rem;
-}
-
-/* Promo Animations */
-@keyframes slideUp {
-  from {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideDown {
-  from {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  to {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-}
-
-/* Promo Mobile */
-@media (max-width: 380px) {
-  .promo-card {
-    width: calc(100% - 16px);
-    margin: 12px auto;
-    border-radius: 14px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-  }
-
-  .promo-top {
-    padding: 8px 12px;
-    font-size: 0.85rem;
-  }
-
-  .promo-top .promo-icon {
-    font-size: 1.1rem;
-    width: 28px;
-    height: 28px;
-  }
-
-  .promo-content {
-    padding: 16px 14px;
-  }
-
-  .promo-content strong {
-    font-size: 0.95rem;
-    margin-bottom: 10px;
-  }
-
-  .promo-price {
-    font-size: 1.5rem;
-    margin: 12px 0;
-  }
-
-  .book-btn {
-    padding: 10px 12px;
-    font-size: 0.9rem;
-    margin: 12px 0;
-  }
-
-  .hosting-tag {
-    font-size: 0.75rem;
-    margin-top: 10px;
-    padding-top: 10px;
-  }
-
-  .hosting-tag i {
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 640px) {
-  .promo-card {
-    width: calc(100% - 16px);
-    margin: 16px auto;
-    border-radius: 16px;
-  }
-
-  .promo-top {
-    padding: 10px 14px;
-    font-size: 0.9rem;
-  }
-
-  .promo-content {
-    padding: 18px 16px;
-  }
-
-  .promo-content strong {
-    font-size: 1rem;
-    margin-bottom: 12px;
-  }
-
-  .promo-price {
-    font-size: 1.7rem;
-  }
-
-  .book-btn {
-    padding: 12px 14px;
-    font-size: 0.95rem;
-  }
-
-  .hosting-tag {
-    font-size: 0.8rem;
-    margin-top: 10px;
-    padding-top: 10px;
-  }
-}
-
-@media (min-width: 641px) {
-  .promo-card {
-    width: 100%;
-    max-width: 420px;
-    margin: 30px auto;
-  }
-}
-
-
-/* ═══════════════════════════════════════════════════════════════
-   🏛️ FOOTER STYLES - .main-footer
-   ═══════════════════════════════════════════════════════════════ */
-
-.main-footer {
-  position: relative;
-  width: 100%;
-  background: linear-gradient(135deg, #0d1b2e 0%, #1a2f47 100%);
-  color: #fff;
-  padding: 40px 20px 30px;
-  text-align: center;
-  direction: rtl;
-  border-top: 3px solid #D4AF37;
-  font-family: 'Tajawal', sans-serif;
-  margin: 0;
-}
-
-.main-footer,
-.main-footer * {
-  box-sizing: border-box;
-}
-
-/* المميزات */
-.footer-details {
-  background: rgba(212, 175, 55, 0.1);
-  padding: 16px 18px;
-  border-radius: 12px;
-  display: inline-block;
-  margin: 0 0 24px 0;
-  border: 1px solid rgba(212, 175, 55, 0.3);
-  max-width: 100%;
-}
-
-.footer-details-item {
-  color: #fff;
-  font-size: 0.9rem;
-  margin: 10px 0;
-  line-height: 1.6;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  flex-wrap: wrap;
-  padding: 0;
-}
-
-.footer-details-item strong {
-  color: #D4AF37;
-  font-weight: 800;
-}
-
-.footer-details-item i {
-  color: #D4AF37;
-  font-size: 1.1rem;
-  margin: 0;
-}
-
-/* الشعار */
-.footer-logo {
-  font-weight: 800;
-  font-size: 1.3rem;
-  color: #D4AF37;
-  margin: 20px 0 12px 0;
-  display: block;
-  padding: 0;
-}
-
-/* الوصف */
-.footer-description {
-  max-width: 450px;
-  margin: 0 auto 20px auto;
-  font-size: 0.95rem;
-  opacity: 0.85;
-  line-height: 1.6;
-  padding: 0;
-}
-
-/* الخط الفاصل */
-.footer-divider {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.2), transparent);
-  margin: 20px 0;
-  padding: 0;
-}
-
-/* الحقوق */
-.footer-rights {
-  font-size: 0.8rem;
-  opacity: 0.6;
-  margin: 12px 0 0 0;
-  padding: 0;
-}
-
-.footer-rights p {
-  margin: 0;
-  padding: 0;
-}
-
-/* Footer Mobile */
-@media (max-width: 380px) {
-  .main-footer {
-    padding: 30px 12px 25px;
-  }
-
-  .footer-logo {
-    font-size: 1.1rem;
-  }
-
-  .footer-description {
-    font-size: 0.85rem;
-  }
-
-  .footer-details-item {
-    font-size: 0.8rem;
-  }
-
-  .footer-details {
-    padding: 12px 14px;
-  }
-}
-
-@media (max-width: 640px) {
-  .main-footer {
-    padding: 35px 16px 28px;
-  }
-
-  .footer-logo {
-    font-size: 1.2rem;
-  }
-
-  .footer-details-item {
-    font-size: 0.85rem;
-  }
+.site-subtitle {
+  font-size: 1.2rem;
+  font-weight: 400;
+  opacity: 0.9;
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   🎯 SERVICES SECTION - قسم الخدمات
+   📋 CONTENT - المحتوى
    ═══════════════════════════════════════════════════════════════ */
 
-.services-section {
+.content-section {
   padding: 60px 20px;
-  background: linear-gradient(135deg, #f5f7fa 0%, #e8eef5 100%);
-  font-family: 'Tajawal', sans-serif;
-  direction: rtl;
-}
-
-.services-container {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
-.services-title {
+.section-title {
   color: #1B365D;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 800;
   text-align: center;
-  margin: 0 0 10px 0;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 40px;
 }
 
-.services-subtitle {
-  color: #666;
-  font-size: 1.1rem;
-  font-weight: 400;
-  text-align: center;
-  margin: 0 0 50px 0;
-}
-
-.services-grid {
+/* بطاقات */
+.cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 25px;
-  margin: 0;
-  padding: 0;
+  margin-bottom: 40px;
 }
 
-/* بطاقة الخدمة */
-.service-card {
+.card {
   background: white;
-  border-radius: 16px;
-  padding: 35px 25px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   transition: all 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   text-align: center;
-  position: relative;
-  overflow: hidden;
 }
 
-.service-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, #1B365D 0%, #8B2635 100%);
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
-}
-
-.service-card:hover::before {
-  transform: scaleX(1);
-}
-
-.service-card:hover {
-  transform: translateY(-8px);
+.card:hover {
+  transform: translateY(-5px);
   box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
-/* أيقونة الخدمة */
-.service-icon {
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(135deg, #1B365D 0%, #2d4a7c 100%);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 0 20px 0;
-  transition: all 0.3s ease;
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
 }
 
-.service-card:hover .service-icon {
-  background: linear-gradient(135deg, #8B2635 0%, #a52e40 100%);
-  transform: scale(1.1) rotate(5deg);
-}
-
-.service-icon i {
-  font-size: 2rem;
-  color: white;
-}
-
-/* عنوان الخدمة */
-.service-title {
+.card-title {
   color: #1B365D;
   font-size: 1.4rem;
-  font-weight: 800;
-  margin: 0 0 12px 0;
-}
-
-/* وصف الخدمة */
-.service-description {
-  color: #666;
-  font-size: 1rem;
-  line-height: 1.6;
-  margin: 0 0 20px 0;
-  flex-grow: 1;
-}
-
-/* قائمة المميزات */
-.service-features {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 25px 0;
-  width: 100%;
-}
-
-.service-features li {
-  color: #333;
-  font-size: 0.95rem;
-  padding: 8px 0;
-  border-bottom: 1px solid #f0f0f0;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.service-features li:last-child {
-  border-bottom: none;
-}
-
-.service-features li i {
-  color: #27A148;
-  font-size: 0.85rem;
-}
-
-/* زر الخدمة */
-.service-btn {
-  background: linear-gradient(135deg, #27A148 0%, #1e8038 100%);
-  color: white !important;
-  padding: 12px 30px;
-  border-radius: 25px;
-  text-decoration: none !important;
   font-weight: 700;
-  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.card-text {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* زر */
+.btn {
   display: inline-block;
+  background: #27A148;
+  color: white;
+  padding: 15px 40px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
   transition: all 0.3s ease;
   box-shadow: 0 4px 10px rgba(39, 161, 72, 0.3);
 }
 
-.service-btn:hover {
-  background: linear-gradient(135deg, #1e8038 0%, #27A148 100%);
+.btn:hover {
+  background: #1e8038;
   transform: translateY(-2px);
   box-shadow: 0 6px 15px rgba(39, 161, 72, 0.4);
 }
 
-.service-btn:active {
-  transform: translateY(0);
+/* ═══════════════════════════════════════════════════════════════
+   🏛️ FOOTER - الفوتر
+   ═══════════════════════════════════════════════════════════════ */
+
+.site-footer {
+  background: #1B365D;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
 }
 
-/* Responsive */
+.footer-text {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   📱 Responsive - للموبايل
+   ═══════════════════════════════════════════════════════════════ */
+
 @media (max-width: 768px) {
-  .services-title {
-    font-size: 2rem;
+  .site-title {
+    font-size: 1.5rem;
   }
 
-  .services-subtitle {
-    font-size: 1rem;
-    margin-bottom: 35px;
+  .section-title {
+    font-size: 1.5rem;
   }
 
-  .services-grid {
+  .cards-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .service-card {
-    padding: 30px 20px;
-  }
-
-  .service-icon {
-    width: 70px;
-    height: 70px;
-  }
-
-  .service-icon i {
-    font-size: 1.7rem;
-  }
-
-  .service-title {
-    font-size: 1.2rem;
-  }
-
-  .service-description {
-    font-size: 0.95rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .services-section {
-    padding: 40px 15px;
-  }
-
-  .services-title {
-    font-size: 1.7rem;
-  }
-
-  .service-btn {
-    width: 100%;
-    padding: 14px 20px;
   }
 }
