@@ -204,7 +204,7 @@ function closePromo() {
       console.log('✅ تم إغلاق البطاقة الترويجية');
 
       // حفظ حالة الإغلاق في localStorage
-      localStorage.removeItem('promoCardClosed')
+    /*  localStorage.removeItem('promoCardClosed')
 
    //   localStorage.setItem('promoCardClosed', 'true');
 //    }, 500);
@@ -225,8 +225,8 @@ function closePromo() {
  //   } else {
    //   console.log('💎 تم عرض البطاقة الترويجية');
   //  }
-//  }
-//});
+  }
+//});*/
 
 // ═══════════════════════════════════════════════════════════════
 // 🚀 دالة احتياطية
