@@ -135,8 +135,8 @@ html, body {
   display: flex;
   flex-direction: column;
   line-height: 1.1;
-  border-left: 1px solid #eee;
-  padding-left: 6px;
+  border-right: 1px solid #eee;
+  padding-right: 6px;
 }
 
 .lic-label {
