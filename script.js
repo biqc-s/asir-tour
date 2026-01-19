@@ -198,10 +198,10 @@ function closePromo() {
       console.log('✅ تم إغلاق البطاقة الترويجية');
 
       // حفظ حالة الإغلاق في localStorage
-      localStorage.setItem('promoCardClosed', 'true');
-    }, 500);
-  }
-}
+   //   localStorage.setItem('promoCardClosed', 'true');
+//    }, 500);
+//  }
+//}
 
 // التحقق من حالة البطاقة الترويجية عند تحميل الصفحة
 document.addEventListener('DOMContentLoaded', function() {
