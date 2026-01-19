@@ -36,23 +36,6 @@ html, body {
 /* ═══════════════════════════════════════════════════════════════
    📱 HEADER - رأس الصفحة
    ═══════════════════════════════════════════════════════════════ */
-/* رأس الصفحة */
-.main-header {
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 70px;
-background: #ffffff !important;
-box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
-z-index: 99999;
-display: flex;
-align-items: center;
-direction: rtl;
-font-family: 'Tajawal', sans-serif;
-padding: 0 12px;
-gap: 8px;
-}
 
 .main-header {
   position: fixed;
@@ -280,15 +263,9 @@ gap: 8px;
   background: rgba(139, 38, 53, 0.1);
 }
 
-/* علامة تجارية للمرشد */
-.guide-brand {
-display: flex;
-flex-direction: column;
-text-align: center;
-flex: 1;
-padding: 0 8px;
-min-width: 0;
-}
+/* ═══════════════════════════════════════════════════════════════
+   📋 CONTENT - المحتوى
+   ═══════════════════════════════════════════════════════════════ */
 
 /* إزاحة المحتوى لتجنب تغطية الـ Header */
 .content-wrapper {
@@ -310,63 +287,11 @@ min-width: 0;
   margin-bottom: 40px;
 }
 
-/* بطاقة الترخيص */
-.license-card {
-display: flex;
-align-items: center;
-gap: 6px;
-background: #fdfdfd;
-padding: 4px 8px;
-border-radius: 6px;
-border: 1px solid #f0f0f0;
-flex-shrink: 0;
-min-width: 0;
-}
-
-.gov-logo {
-height: 26px;
-width: auto;
-object-fit: contain;
-}
-
-.lic-info {
-display: flex;
-flex-direction: column;
-line-height: 1.1;
-border-right: 1px solid #eee;
-padding-right: 6px;
-}
-
-.lic-label {
-font-size: 0.5rem;
-color: #999;
-font-weight: 700;
-margin-bottom: 1px;
-}
-
 .card-title {
   color: var(--primary-color);
   font-size: 1.4rem;
   font-weight: 700;
   margin-bottom: 15px;
-}
-
-/* زر الواتساب */
-.wa-btn {
-background: #27A148;
-color: white !important;
-width: 44px;
-height: 44px;
-border-radius: 8px;
-text-decoration: none;
-display: flex;
-align-items: center;
-justify-content: center;
-flex-shrink: 0;
-transition: all 0.3s;
-border: none;
-cursor: pointer;
--webkit-appearance: none;
 }
 
 /* زر */
@@ -381,10 +306,6 @@ cursor: pointer;
   font-size: 1.1rem;
   transition: all 0.3s ease;
   box-shadow: 0 4px 10px rgba(39, 161, 72, 0.3);
-}
-
-.sidebar-close-btn:active {
-background: rgba(139, 38, 53, 0.1);
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -674,127 +595,6 @@ background: rgba(139, 38, 53, 0.1);
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   📱 Responsive - استجابة الشاشات
-   ═══════════════════════════════════════════════════════════════ */
-
-/* الشاشات الصغيرة جداً (أقل من 360px) */
-@media (max-width: 360px) {
-  .main-header {
-    height: 65px;
-    padding: 0 8px;
-    gap: 4px;
-  }
-
-  .menu-btn, .wa-btn {
-    width: 40px;
-    height: 40px;
-    font-size: 1rem;
-  }
-
-  .guide-name {
-    font-size: 0.85rem;
-  }
-
-  .guide-sub {
-    font-size: 0.6rem;
-  }
-
-  .gov-logo {
-    height: 22px;
-  }
-
-  .lic-number {
-    font-size: 0.6rem;
-  }
-
-  .lic-label {
-    font-size: 0.45rem;
-  }
-
-  .license-card {
-    padding: 3px 6px;
-    gap: 4px;
-  }
-}
-
-/* الهواتف العادية (أقل من 480px) */
-@media (max-width: 480px) {
-  .main-header {
-    height: 68px;
-  }
-
-  .menu-btn, .wa-btn {
-    width: 42px;
-    height: 42px;
-  }
-
-  .guide-name {
-    font-size: 0.85rem;
-  }
-
-  .gov-logo {
-    height: 24px;
-  }
-
-  .lic-number {
-    font-size: 0.65rem;
-  }
-
-  .lic-label {
-    font-size: 0.48rem;
-  }
-
-  .section-title {
-    font-size: 1.5rem;
-  }
-
-  .cards-grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* Footer responsive */
-  .footer-title {
-    font-size: 1.5rem;
-  }
-
-  .footer-logo {
-    height: 45px;
-  }
-
-  .footer-middle {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-
-  .footer-social-link {
-    width: 45px;
-    height: 45px;
-    font-size: 1.2rem;
-  }
-}
-
-/* التابلت (481px إلى 768px) */
-@media (min-width: 481px) and (max-width: 768px) {
-  .main-header {
-    height: 72px;
-  }
-
-  .menu-btn, .wa-btn {
-    width: 44px;
-    height: 44px;
-  }
-
-  .guide-name {
-    font-size: 1rem;
-  }
-
-  /* Footer responsive - Tablet */
-  .footer-middle {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* ═══════════════════════════════════════════════════════════════
    💎 PROMO CARD - بطاقة العرض الترويجي
    ═══════════════════════════════════════════════════════════════ */
 
@@ -1019,8 +819,106 @@ background: rgba(139, 38, 53, 0.1);
   }
 }
 
-/* Responsive للبطاقة الترويجية */
+/* ═══════════════════════════════════════════════════════════════
+   📱 Responsive - استجابة الشاشات
+   ═══════════════════════════════════════════════════════════════ */
+
+/* الشاشات الصغيرة جداً (أقل من 360px) */
+@media (max-width: 360px) {
+  .main-header {
+    height: 65px;
+    padding: 0 8px;
+    gap: 4px;
+  }
+
+  .menu-btn, .wa-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .guide-name {
+    font-size: 0.85rem;
+  }
+
+  .guide-sub {
+    font-size: 0.6rem;
+  }
+
+  .gov-logo {
+    height: 22px;
+  }
+
+  .lic-number {
+    font-size: 0.6rem;
+  }
+
+  .lic-label {
+    font-size: 0.45rem;
+  }
+
+  .license-card {
+    padding: 3px 6px;
+    gap: 4px;
+  }
+}
+
+/* الهواتف العادية (أقل من 480px) */
 @media (max-width: 480px) {
+  .main-header {
+    height: 68px;
+  }
+
+  .menu-btn, .wa-btn {
+    width: 42px;
+    height: 42px;
+  }
+
+  .guide-name {
+    font-size: 0.85rem;
+  }
+
+  .gov-logo {
+    height: 24px;
+  }
+
+  .lic-number {
+    font-size: 0.65rem;
+  }
+
+  .lic-label {
+    font-size: 0.48rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Footer responsive */
+  .footer-title {
+    font-size: 1.5rem;
+  }
+
+  .footer-logo {
+    height: 45px;
+  }
+
+  .footer-middle {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .footer-social-link {
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
+  }
+
+  /* Promo Card responsive */
   .promo-box {
     width: 92%;
     right: 4%;
@@ -1042,7 +940,28 @@ background: rgba(139, 38, 53, 0.1);
   }
 }
 
-/* للشاشات الصغيرة جداً */
+/* التابلت (481px إلى 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .main-header {
+    height: 72px;
+  }
+
+  .menu-btn, .wa-btn {
+    width: 44px;
+    height: 44px;
+  }
+
+  .guide-name {
+    font-size: 1rem;
+  }
+
+  /* Footer responsive - Tablet */
+  .footer-middle {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* للشاشات الصغيرة جداً - Promo Card */
 @media (max-width: 360px) {
   .promo-box {
     bottom: 10px;
