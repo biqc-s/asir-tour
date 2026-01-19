@@ -3,7 +3,7 @@
  * 🎯 JavaScript الرئيسي للموقع
  * ═══════════════════════════════════════════════════════════════
  * استخدام: ضع هذا الرابط في Settings → Code → Head:
- * <script src="https://raw.githack.com/biqc-s/asir-tour/refs/heads/claude/debug-carrd-integration-fOtCT/script.js"></script>
+ * <script src="https://raw.githack.com/biqc-s/asir-tour/refs/heads/main/script.js"></script>
  * ═══════════════════════════════════════════════════════════════
  */
 
