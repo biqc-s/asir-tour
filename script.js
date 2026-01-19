@@ -188,6 +188,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 /**
  * إغلاق البطاقة الترويجية
+ * ملاحظة: البطاقة تختفي لكن تظهر مرة أخرى عند تحديث الصفحة
  */
 function closePromo() {
   const promoBox = document.getElementById('promoCard');
@@ -195,30 +196,10 @@ function closePromo() {
     promoBox.style.animation = 'slideOutDown 0.5s ease-in';
     setTimeout(function() {
       promoBox.style.display = 'none';
-      console.log('✅ تم إغلاق البطاقة الترويجية');
-
-      // حفظ حالة الإغلاق في localStorage
-      localStorage.setItem('promoCardClosed', 'true');
+      console.log('✅ تم إغلاق البطاقة الترويجية (ستظهر مرة أخرى عند Refresh)');
     }, 500);
   }
 }
-
-// التحقق من حالة البطاقة الترويجية عند تحميل الصفحة
-document.addEventListener('DOMContentLoaded', function() {
-  const promoBox = document.getElementById('promoCard');
-
-  if (promoBox) {
-    // إذا كان المستخدم أغلق البطاقة سابقاً، لا تظهرها
-    const wasClosed = localStorage.getItem('promoCardClosed');
-
-    if (wasClosed === 'true') {
-      promoBox.style.display = 'none';
-      console.log('💎 البطاقة الترويجية مخفية (تم إغلاقها سابقاً)');
-    } else {
-      console.log('💎 تم عرض البطاقة الترويجية');
-    }
-  }
-});
 
 // ═══════════════════════════════════════════════════════════════
 // 🚀 دالة احتياطية
