@@ -981,3 +981,157 @@ html, body {
     font-size: 0.8rem;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   🎯 BEKAREM FOOTER - فوتر بيكارم للأعمال الذكية
+   ═══════════════════════════════════════════════════════════════ */
+
+.bekarem-footer {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  color: #ffffff;
+  padding: 50px 20px 30px;
+  text-align: center;
+  direction: rtl;
+  font-family: 'Tajawal', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.bekarem-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg,
+    var(--secondary-color) 0%,
+    var(--primary-color) 50%,
+    var(--wa-color) 100%);
+}
+
+/* Badge العرض الخاص */
+.bekarem-badge-container {
+  margin-bottom: 30px;
+}
+
+.bekarem-offer-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+  color: white;
+  padding: 12px 25px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
+  animation: pulseGlow 2s infinite;
+}
+
+.bekarem-offer-badge i {
+  font-size: 1.2rem;
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
+  }
+  50% {
+    box-shadow: 0 8px 35px rgba(255, 107, 107, 0.6);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* اسم العلامة التجارية */
+.bekarem-brand-name {
+  display: block;
+  font-size: 2.2rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 20px;
+  text-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+/* الوصف */
+.bekarem-description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 700px;
+  margin: 0 auto 30px;
+  padding: 0 20px;
+}
+
+.bekarem-description strong {
+  color: #ffd700;
+  font-weight: 800;
+}
+
+/* الفاصل */
+.bekarem-divider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    var(--wa-color) 50%,
+    transparent 100%);
+  margin: 30px auto;
+}
+
+/* معلومات الاستضافة */
+.bekarem-hosting-info {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  margin-bottom: 25px;
+}
+
+.bekarem-hosting-info i {
+  color: var(--wa-color);
+  font-size: 1.1rem;
+}
+
+/* حقوق النشر */
+.bekarem-copyright {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .bekarem-brand-name {
+    font-size: 1.8rem;
+  }
+
+  .bekarem-description {
+    font-size: 0.95rem;
+    padding: 0 10px;
+  }
+
+  .bekarem-offer-badge {
+    font-size: 0.8rem;
+    padding: 10px 20px;
+  }
+}
