@@ -1,0 +1,89 @@
+<!-- ═══════════════════════════════════════════════════════════════
+   📱 HEADER HTML - بدون JavaScript
+   استخدم هذا الكود في: Embed → Code → Style: Inline
+   ═══════════════════════════════════════════════════════════════ -->
+
+<!-- تحميل الخطوط والايقونات -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<link rel="stylesheet" href="https://raw.githack.com/biqc-s/asir-tour/refs/heads/claude/debug-carrd-integration-fOtCT/styles.css">
+
+<!-- رأس الصفحة -->
+<header class="main-header">
+  <div class="nav-container">
+    <!-- زر القائمة -->
+    <button class="menu-btn" id="menuButton">
+      <i class="fas fa-bars-staggered"></i>
+    </button>
+
+    <!-- اسم المرشد -->
+    <div class="guide-brand">
+      <span class="guide-name">عبدالله السلمان</span>
+      <span class="guide-sub">مرشد سياحي مرخص</span>
+    </div>
+
+    <!-- بطاقة الترخيص -->
+    <div class="license-card">
+      <div class="lic-info">
+        <span class="lic-label">ترخيص رقم</span>
+        <span class="lic-number">12345678</span>
+      </div>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Coat_of_arms_of_Saudi_Arabia.svg/220px-Coat_of_arms_of_Saudi_Arabia.svg.png"
+           alt="شعار السعودية"
+           class="gov-logo">
+    </div>
+
+    <!-- زر الواتساب -->
+    <a href="https://wa.me/966XXXXXXXXX"
+       class="wa-btn"
+       target="_blank"
+       aria-label="واتساب">
+      <i class="fab fa-whatsapp" style="font-size: 1.3rem;"></i>
+    </a>
+  </div>
+</header>
+
+<!-- طبقة التغطية (للخلفية عند فتح القائمة) -->
+<div id="overlay"></div>
+
+<!-- القائمة الجانبية -->
+<aside class="sidebar" id="sidebar">
+  <button class="sidebar-close-btn" id="closeButton">
+    <i class="fas fa-xmark"></i>
+  </button>
+
+  <ul class="sidebar-list">
+    <li>
+      <a href="#home">
+        <i class="fas fa-house"></i>
+        <span>الرئيسية</span>
+      </a>
+    </li>
+    <li>
+      <a href="#about">
+        <i class="fas fa-user"></i>
+        <span>من أنا</span>
+      </a>
+    </li>
+    <li>
+      <a href="#services">
+        <i class="fas fa-briefcase"></i>
+        <span>خدماتي</span>
+      </a>
+    </li>
+    <li>
+      <a href="#gallery">
+        <i class="fas fa-images"></i>
+        <span>معرض الصور</span>
+      </a>
+    </li>
+    <li>
+      <a href="#contact">
+        <i class="fas fa-phone"></i>
+        <span>تواصل معي</span>
+      </a>
+    </li>
+  </ul>
+</aside>
+
+<!-- مسافة فارغة لتجنب تغطية المحتوى بالـ Header -->
+<div class="content-wrapper"></div>
