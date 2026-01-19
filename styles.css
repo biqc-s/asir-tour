@@ -2,63 +2,285 @@
    🎨 CSS للموقع - ملف واحد فقط
    ═══════════════════════════════════════════════════════════════
    رابط الاستخدام:
-   https://cdn.jsdelivr.net/gh/biqc-s/asir-tour@main/styles.css
+   https://raw.githack.com/biqc-s/asir-tour/refs/heads/main/styles.css
    ═══════════════════════════════════════════════════════════════ */
 
 @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap');
 
-/* ═══════════════════════════════════════════════════════════════
-   🎯 إعدادات عامة
-   ═══════════════════════════════════════════════════════════════ */
+/* الألوان الأساسية */
+:root {
+  --primary-color: #1B365D;
+  --secondary-color: #8B2635;
+  --wa-color: #27A148;
+  --shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  --danger-color: #ff4d4d;
+  --success-color: #34b656;
+}
 
+/* عام */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
-body {
-  font-family: 'Tajawal', sans-serif;
-  direction: rtl;
-  background: #fff;
-  color: #333;
+html, body {
+  width: 100%;
+  height: auto;
+  font-family: 'Tajawal', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #f5f5f5;
+  -webkit-touch-callout: none;
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   📱 HEADER - الرأس
+   📱 HEADER - رأس الصفحة
    ═══════════════════════════════════════════════════════════════ */
 
-.site-header {
-  background: linear-gradient(135deg, #1B365D 0%, #2d4a7c 100%);
-  color: white;
-  padding: 30px 20px;
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  background: #ffffff !important;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  direction: rtl;
+  font-family: 'Tajawal', sans-serif;
+  padding: 0 12px;
+  gap: 8px;
+}
+
+.nav-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+/* زر القائمة */
+.menu-btn {
+  background: #f8f9fa;
+  border: none;
+  border-radius: 8px;
+  width: 44px;
+  height: 44px;
+  font-size: 1.1rem;
+  color: var(--primary-color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s;
+  -webkit-appearance: none;
+}
+
+.menu-btn:active {
+  background: #e8e9eb;
+  transform: scale(0.95);
+}
+
+/* علامة تجارية للمرشد */
+.guide-brand {
+  display: flex;
+  flex-direction: column;
   text-align: center;
+  flex: 1;
+  padding: 0 8px;
+  min-width: 0;
 }
 
-.site-title {
-  font-size: 2rem;
+.guide-name {
+  color: var(--secondary-color);
   font-weight: 800;
-  margin-bottom: 10px;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.site-subtitle {
-  font-size: 1.2rem;
-  font-weight: 400;
-  opacity: 0.9;
+.guide-sub {
+  color: var(--primary-color);
+  font-size: 0.65rem;
+  font-weight: 700;
+  opacity: 0.8;
+}
+
+/* بطاقة الترخيص */
+.license-card {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #fdfdfd;
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid #f0f0f0;
+  flex-shrink: 0;
+  min-width: 0;
+}
+
+.gov-logo {
+  height: 26px;
+  width: auto;
+  object-fit: contain;
+}
+
+.lic-info {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+  border-right: 1px solid #eee;
+  padding-right: 6px;
+}
+
+.lic-label {
+  font-size: 0.5rem;
+  color: #999;
+  font-weight: 700;
+  margin-bottom: 1px;
+}
+
+.lic-number {
+  font-size: 0.7rem;
+  color: var(--primary-color);
+  font-weight: 800;
+}
+
+/* زر الواتساب */
+.wa-btn {
+  background: var(--wa-color);
+  color: white !important;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s;
+  border: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+
+.wa-btn:active {
+  transform: scale(0.95);
+  box-shadow: 0 4px 12px rgba(39, 161, 72, 0.3);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   🎯 SIDEBAR - القائمة الجانبية
+   ═══════════════════════════════════════════════════════════════ */
+
+/* طبقة التغطية */
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(8, 63, 1, 0.322);
+  z-index: 100000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  display: none;
+}
+
+#overlay.active {
+  opacity: 1;
+  visibility: visible;
+  display: block;
+}
+
+/* القائمة الجانبية */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -85vw;
+  width: 85vw;
+  max-width: 280px;
+  height: 100vh;
+  background: #fff;
+  z-index: 100001;
+  transition: 0.4s ease;
+  padding: 16px;
+  direction: rtl;
+  overflow-y: auto;
+  box-shadow: -4px 0 12px rgba(112, 88, 88, 0.5);
+}
+
+.sidebar.active {
+  right: 0;
+}
+
+.sidebar-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.sidebar-list a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 12px;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 8px;
+  transition: all 0.3s;
+  border-bottom: 1px solid #f9f9f9;
+}
+
+.sidebar-list a:active {
+  background: #f0f0f0;
+}
+
+/* زر الإغلاق */
+.sidebar-close-btn {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--secondary-color);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  border-radius: 8px;
+}
+
+.sidebar-close-btn:active {
+  background: rgba(139, 38, 53, 0.1);
 }
 
 /* ═══════════════════════════════════════════════════════════════
    📋 CONTENT - المحتوى
    ═══════════════════════════════════════════════════════════════ */
 
+/* إزاحة المحتوى لتجنب تغطية الـ Header */
+.content-wrapper {
+  margin-top: 80px;
+  padding: 20px;
+}
+
 .content-section {
-  padding: 60px 20px;
+  padding: 40px 20px;
   max-width: 1000px;
   margin: 0 auto;
 }
 
 .section-title {
-  color: #1B365D;
+  color: var(--primary-color);
   font-size: 2rem;
   font-weight: 800;
   text-align: center;
@@ -93,7 +315,7 @@ body {
 }
 
 .card-title {
-  color: #1B365D;
+  color: var(--primary-color);
   font-size: 1.4rem;
   font-weight: 700;
   margin-bottom: 15px;
@@ -107,7 +329,7 @@ body {
 /* زر */
 .btn {
   display: inline-block;
-  background: #27A148;
+  background: var(--wa-color);
   color: white;
   padding: 15px 40px;
   border-radius: 30px;
@@ -129,7 +351,7 @@ body {
    ═══════════════════════════════════════════════════════════════ */
 
 .site-footer {
-  background: #1B365D;
+  background: var(--primary-color);
   color: white;
   padding: 40px 20px;
   text-align: center;
@@ -141,12 +363,74 @@ body {
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   📱 Responsive - للموبايل
+   📱 Responsive - استجابة الشاشات
    ═══════════════════════════════════════════════════════════════ */
 
-@media (max-width: 768px) {
-  .site-title {
-    font-size: 1.5rem;
+/* الشاشات الصغيرة جداً (أقل من 360px) */
+@media (max-width: 360px) {
+  .main-header {
+    height: 65px;
+    padding: 0 8px;
+    gap: 4px;
+  }
+
+  .menu-btn, .wa-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .guide-name {
+    font-size: 0.85rem;
+  }
+
+  .guide-sub {
+    font-size: 0.6rem;
+  }
+
+  .gov-logo {
+    height: 22px;
+  }
+
+  .lic-number {
+    font-size: 0.6rem;
+  }
+
+  .lic-label {
+    font-size: 0.45rem;
+  }
+
+  .license-card {
+    padding: 3px 6px;
+    gap: 4px;
+  }
+}
+
+/* الهواتف العادية (أقل من 480px) */
+@media (max-width: 480px) {
+  .main-header {
+    height: 68px;
+  }
+
+  .menu-btn, .wa-btn {
+    width: 42px;
+    height: 42px;
+  }
+
+  .guide-name {
+    font-size: 0.85rem;
+  }
+
+  .gov-logo {
+    height: 24px;
+  }
+
+  .lic-number {
+    font-size: 0.65rem;
+  }
+
+  .lic-label {
+    font-size: 0.48rem;
   }
 
   .section-title {
@@ -155,5 +439,21 @@ body {
 
   .cards-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* التابلت (481px إلى 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .main-header {
+    height: 72px;
+  }
+
+  .menu-btn, .wa-btn {
+    width: 44px;
+    height: 44px;
+  }
+
+  .guide-name {
+    font-size: 1rem;
   }
 }
