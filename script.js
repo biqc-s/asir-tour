@@ -201,6 +201,33 @@ function closePromo() {
   }
 }
 
+      console.log('✅ تم إغلاق البطاقة الترويجية');
+
+      // حفظ حالة الإغلاق في localStorage
+    /*  localStorage.removeItem('promoCardClosed')
+
+   //   localStorage.setItem('promoCardClosed', 'true');
+//    }, 500);
+//  }
+//}
+
+// التحقق من حالة البطاقة الترويجية عند تحميل الصفحة
+///document.addEventListener('DOMContentLoaded', function() {
+//  const promoBox = document.getElementById('promoCard');
+
+//  if (promoBox) {
+    // إذا كان المستخدم أغلق البطاقة سابقاً، لا تظهرها
+//    const wasClosed = localStorage.getItem('promoCardClosed');
+
+   // if (wasClosed === 'true') {
+  //    promoBox.style.display = 'none';
+  //    console.log('💎 البطاقة الترويجية مخفية (تم إغلاقها سابقاً)');
+ //   } else {
+   //   console.log('💎 تم عرض البطاقة الترويجية');
+  //  }
+  }
+//});*/
+
 // ═══════════════════════════════════════════════════════════════
 // 🚀 دالة احتياطية
 // ═══════════════════════════════════════════════════════════════
