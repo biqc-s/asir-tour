@@ -188,6 +188,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 /**
  * إغلاق البطاقة الترويجية
+ * ملاحظة: البطاقة تختفي لكن تظهر مرة أخرى عند تحديث الصفحة
  */
 function closePromo() {
   const promoBox = document.getElementById('promoCard');
@@ -195,6 +196,11 @@ function closePromo() {
     promoBox.style.animation = 'slideOutDown 0.5s ease-in';
     setTimeout(function() {
       promoBox.style.display = 'none';
+      console.log('✅ تم إغلاق البطاقة الترويجية (ستظهر مرة أخرى عند Refresh)');
+    }, 500);
+  }
+}
+
       console.log('✅ تم إغلاق البطاقة الترويجية');
 
       // حفظ حالة الإغلاق في localStorage
