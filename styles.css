@@ -793,3 +793,272 @@ background: rgba(139, 38, 53, 0.1);
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   💎 PROMO CARD - بطاقة العرض الترويجي
+   ═══════════════════════════════════════════════════════════════ */
+
+.promo-box {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 330px;
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(212, 175, 55, 0.3);
+  z-index: 100002;
+  direction: rtl;
+  font-family: 'Tajawal', sans-serif;
+  overflow: hidden;
+  animation: slideInUp 0.5s ease-out;
+}
+
+/* Banner العلوي */
+.promo-banner {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: white;
+  padding: 12px 20px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.promo-close-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.promo-close-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(90deg);
+}
+
+/* محتوى البطاقة */
+.promo-body {
+  padding: 25px;
+  text-align: center;
+}
+
+.promo-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 15px;
+  background: linear-gradient(135deg, #ffd700, #ffed4e);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
+  animation: pulse 2s infinite;
+}
+
+.promo-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  margin: 15px 0 8px;
+}
+
+.promo-description {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* الأسعار */
+.price-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.price-new {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--wa-color);
+  line-height: 1;
+}
+
+.price-old {
+  font-size: 0.95rem;
+  color: #999;
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+.price-badge {
+  background: var(--secondary-color);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+/* زر CTA */
+.promo-cta-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  background: var(--primary-color);
+  color: white !important;
+  text-decoration: none;
+  padding: 16px;
+  border-radius: 14px;
+  font-weight: 800;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(27, 54, 93, 0.3);
+  margin-bottom: 15px;
+}
+
+.promo-cta-btn:hover {
+  background: var(--secondary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(139, 38, 53, 0.4);
+}
+
+.promo-cta-btn i {
+  font-size: 1.3rem;
+}
+
+/* رسالة الاستضافة */
+.hosting-msg {
+  background: rgba(39, 161, 72, 0.1);
+  color: var(--wa-color);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 10px 15px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 15px;
+  border: 1px dashed var(--wa-color);
+}
+
+.hosting-msg i {
+  font-size: 1rem;
+}
+
+/* المميزات */
+.promo-features {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: #555;
+  justify-content: center;
+}
+
+.feature-item i {
+  color: var(--wa-color);
+  font-size: 1rem;
+}
+
+/* أنيميشن الظهور */
+@keyframes slideInUp {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* أنيميشن النبض */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* أنيميشن الإخفاء */
+@keyframes slideOutDown {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+}
+
+/* Responsive للبطاقة الترويجية */
+@media (max-width: 480px) {
+  .promo-box {
+    width: 92%;
+    right: 4%;
+    left: 4%;
+    bottom: 20px;
+  }
+
+  .promo-title {
+    font-size: 1rem;
+  }
+
+  .price-new {
+    font-size: 1.75rem;
+  }
+
+  .promo-cta-btn {
+    padding: 14px;
+    font-size: 0.95rem;
+  }
+}
+
+/* للشاشات الصغيرة جداً */
+@media (max-width: 360px) {
+  .promo-box {
+    bottom: 10px;
+  }
+
+  .promo-body {
+    padding: 20px 15px;
+  }
+
+  .promo-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+
+  .promo-features {
+    font-size: 0.8rem;
+  }
+}
