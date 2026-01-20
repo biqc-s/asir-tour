@@ -7,17 +7,25 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap');
 
-/* الألوان الأساسية */
+/* 
+====================================================================
+   기본 설정 (Global Settings)
+====================================================================
+*/
+
 :root {
   --primary-color: #1B365D;
   --secondary-color: #8B2635;
   --wa-color: #27A148;
+  --light-bg: #f5f5f5;
+  --white-color: #ffffff;
+  --dark-text: #333333;
+  --light-text: #666666;
   --shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
   --danger-color: #ff4d4d;
   --success-color: #34b656;
 }
 
-/* عام */
 * {
   margin: 0;
   padding: 0;
@@ -29,13 +37,16 @@ html, body {
   width: 100%;
   height: auto;
   font-family: 'Tajawal', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background: #f5f5f5;
+  background: var(--light-bg);
   -webkit-touch-callout: none;
+  scroll-behavior: smooth;
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   📱 HEADER - رأس الصفحة
-   ═══════════════════════════════════════════════════════════════ */
+/* 
+====================================================================
+   HEADER (رأس الصفحة)
+====================================================================
+*/
 
 .main-header {
   position: fixed;
@@ -43,13 +54,12 @@ html, body {
   left: 0;
   width: 100%;
   height: 70px;
-  background: #ffffff !important;
+  background: var(--white-color) !important;
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
-  z-index: 99999;
+  z-index: 999;
   display: flex;
   align-items: center;
   direction: rtl;
-  font-family: 'Tajawal', sans-serif;
   padding: 0 12px;
   gap: 8px;
 }
@@ -62,7 +72,6 @@ html, body {
   gap: 6px;
 }
 
-/* زر القائمة */
 .menu-btn {
   background: #f8f9fa;
   border: none;
@@ -85,7 +94,6 @@ html, body {
   transform: scale(0.95);
 }
 
-/* علامة تجارية للمرشد */
 .guide-brand {
   display: flex;
   flex-direction: column;
@@ -111,7 +119,6 @@ html, body {
   opacity: 0.8;
 }
 
-/* بطاقة الترخيص */
 .license-card {
   display: flex;
   align-items: center;
@@ -152,7 +159,6 @@ html, body {
   font-weight: 800;
 }
 
-/* زر الواتساب */
 .wa-btn {
   background: var(--wa-color);
   color: white !important;
@@ -175,11 +181,12 @@ html, body {
   box-shadow: 0 4px 12px rgba(39, 161, 72, 0.3);
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   🎯 SIDEBAR - القائمة الجانبية
-   ═══════════════════════════════════════════════════════════════ */
+/* 
+====================================================================
+   SIDEBAR (القائمة الجانبية)
+====================================================================
+*/
 
-/* طبقة التغطية */
 #overlay {
   position: fixed;
   top: 0;
@@ -187,7 +194,7 @@ html, body {
   width: 100%;
   height: 100%;
   background: rgba(8, 63, 1, 0.322);
-  z-index: 100000;
+  z-index: 1000;
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
@@ -200,7 +207,6 @@ html, body {
   display: block;
 }
 
-/* القائمة الجانبية */
 .sidebar {
   position: fixed;
   top: 0;
@@ -208,8 +214,8 @@ html, body {
   width: 85vw;
   max-width: 280px;
   height: 100vh;
-  background: #fff;
-  z-index: 100001;
+  background: var(--white-color);
+  z-index: 1001;
   transition: 0.4s ease;
   padding: 16px;
   direction: rtl;
@@ -244,7 +250,6 @@ html, body {
   background: #f0f0f0;
 }
 
-/* زر الإغلاق */
 .sidebar-close-btn {
   background: none;
   border: none;
@@ -264,54 +269,161 @@ html, body {
   background: rgba(139, 38, 53, 0.1);
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   📋 CONTENT - المحتوى
-   ═══════════════════════════════════════════════════════════════ */
+/* 
+====================================================================
+   CONTENT (المحتوى)
+====================================================================
+*/
 
-/* إزاحة المحتوى لتجنب تغطية الـ Header */
 .content-wrapper {
-  margin-top: 80px;
-  padding: 20px;
+  margin-top: 70px;
 }
 
 .content-section {
-  padding: 40px 20px;
+  padding: 60px 20px;
   max-width: 1000px;
   margin: 0 auto;
 }
 
+.content-section.bg-light {
+    background: var(--white-color);
+}
+
 .section-title {
   color: var(--primary-color);
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: 800;
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
 }
 
-.card-title {
-  color: var(--primary-color);
-  font-size: 1.4rem;
-  font-weight: 700;
-  margin-bottom: 15px;
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://picsum.photos/seed/hero/1200/800') no-repeat center center/cover;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white-color);
+    padding: 0 20px;
 }
 
-/* زر */
-.btn {
-  display: inline-block;
-  background: var(--wa-color);
-  color: white;
-  padding: 15px 40px;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 1.1rem;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(39, 161, 72, 0.3);
+.hero-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 15px;
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   🏛️ FOOTER - الفوتر
-   ═══════════════════════════════════════════════════════════════ */
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.hero-cta {
+    display: inline-block;
+    background: var(--secondary-color);
+    color: var(--white-color);
+    padding: 15px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(139, 38, 53, 0.5);
+}
+
+.hero-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(139, 38, 53, 0.6);
+}
+
+/* About Section */
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+.about-image {
+    flex: 1;
+    min-width: 250px;
+}
+.about-image img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.about-text {
+    flex: 2;
+}
+.about-text h3 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--light-text);
+}
+
+/* Services Section */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+.service-card {
+    background: var(--light-bg);
+    padding: 40px 30px;
+    text-align: center;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    border: 1px solid #eee;
+}
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+.service-icon {
+    font-size: 3rem;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+.service-card h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+.service-card p {
+    color: var(--light-text);
+    line-height: 1.7;
+}
+
+/* Gallery Section */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+.gallery-item img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* 
+====================================================================
+   FOOTER (الفوتر)
+====================================================================
+*/
 
 .site-footer {
   background: linear-gradient(135deg, var(--primary-color) 0%, #0f2442 100%);
@@ -322,13 +434,11 @@ html, body {
   overflow: hidden;
 }
 
-/* حاوية الفوتر */
 .footer-container {
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* القسم العلوي - معلومات المرشد */
 .footer-top {
   text-align: center;
   padding-bottom: 40px;
@@ -383,7 +493,6 @@ html, body {
   font-size: 1.1rem;
 }
 
-/* القسم الأوسط - الأعمدة */
 .footer-middle {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -479,7 +588,6 @@ html, body {
   text-decoration: underline;
 }
 
-/* القسم السفلي - التواصل الاجتماعي وحقوق النشر */
 .footer-bottom {
   padding-top: 30px;
   border-top: 2px solid rgba(255, 255, 255, 0.1);
@@ -489,7 +597,6 @@ html, body {
   align-items: center;
 }
 
-/* أزرار التواصل الاجتماعي */
 .footer-social {
   display: flex;
   gap: 15px;
@@ -520,38 +627,12 @@ html, body {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
-/* ألوان خاصة لكل منصة */
-.footer-social-link[aria-label="واتساب"]:hover {
-  background: var(--wa-color);
-  color: white;
-  border-color: var(--wa-color);
-}
+.footer-social-link[aria-label="واتساب"]:hover { background: var(--wa-color); color: white; border-color: var(--wa-color); }
+.footer-social-link[aria-label="انستقرام"]:hover { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); color: white; border-color: #e6683c; }
+.footer-social-link[aria-label="تويتر"]:hover { background: #000000; color: white; border-color: #000000; }
+.footer-social-link[aria-label="سناب شات"]:hover { background: #FFFC00; color: #000000; border-color: #FFFC00; }
+.footer-social-link[aria-label="تيك توك"]:hover { background: #000000; color: #00f2ea; border-color: #00f2ea; }
 
-.footer-social-link[aria-label="انستقرام"]:hover {
-  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-  color: white;
-  border-color: #e6683c;
-}
-
-.footer-social-link[aria-label="تويتر"]:hover {
-  background: #000000;
-  color: white;
-  border-color: #000000;
-}
-
-.footer-social-link[aria-label="سناب شات"]:hover {
-  background: #FFFC00;
-  color: #000000;
-  border-color: #FFFC00;
-}
-
-.footer-social-link[aria-label="تيك توك"]:hover {
-  background: #000000;
-  color: #00f2ea;
-  border-color: #00f2ea;
-}
-
-/* حقوق النشر */
 .footer-copyright {
   text-align: center;
   display: flex;
@@ -569,52 +650,39 @@ html, body {
   gap: 8px;
 }
 
-.footer-copyright i {
-  font-size: 0.85rem;
-}
-
-.footer-credits {
-  font-size: 0.85rem !important;
-}
-
+.footer-copyright i { font-size: 0.85rem; }
+.footer-credits { font-size: 0.85rem !important; }
 .footer-credits i.fa-heart {
   color: var(--secondary-color);
   animation: heartbeat 1.5s infinite;
 }
 
-/* أنيميشن القلب */
 @keyframes heartbeat {
-  0%, 100% {
-    transform: scale(1);
-  }
-  25% {
-    transform: scale(1.2);
-  }
-  50% {
-    transform: scale(1);
-  }
+  0%, 100% { transform: scale(1); }
+  25% { transform: scale(1.2); }
+  50% { transform: scale(1); }
 }
 
-/* ═══════════════════════════════════════════════════════════════
-   💎 PROMO CARD - بطاقة العرض الترويجي
-   ═══════════════════════════════════════════════════════════════ */
+/* 
+====================================================================
+   PROMO CARD (بطاقة العرض)
+====================================================================
+*/
 
 .promo-box {
   position: fixed;
   bottom: 30px;
   right: 30px;
   width: 330px;
-  background: #ffffff;
+  background: var(--white-color);
   border-radius: 24px;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(212, 175, 55, 0.3);
-  z-index: 100002;
+  z-index: 1002;
   direction: rtl;
-  font-family: 'Tajawal', sans-serif;
   overflow: hidden;
   animation: slideInUp 0.5s ease-out;
 }
 
-/* Banner العلوي */
 .promo-banner {
   background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
   color: white;
@@ -646,7 +714,6 @@ html, body {
   transform: rotate(90deg);
 }
 
-/* محتوى البطاقة */
 .promo-body {
   padding: 25px;
   text-align: center;
@@ -680,7 +747,6 @@ html, body {
   margin-bottom: 20px;
 }
 
-/* الأسعار */
 .price-container {
   display: flex;
   align-items: center;
@@ -713,7 +779,6 @@ html, body {
   font-weight: 800;
 }
 
-/* زر CTA */
 .promo-cta-btn {
   display: flex;
   align-items: center;
@@ -738,11 +803,8 @@ html, body {
   box-shadow: 0 12px 30px rgba(139, 38, 53, 0.4);
 }
 
-.promo-cta-btn i {
-  font-size: 1.3rem;
-}
+.promo-cta-btn i { font-size: 1.3rem; }
 
-/* رسالة الاستضافة */
 .hosting-msg {
   background: rgba(39, 161, 72, 0.1);
   color: var(--wa-color);
@@ -758,11 +820,8 @@ html, body {
   border: 1px dashed var(--wa-color);
 }
 
-.hosting-msg i {
-  font-size: 1rem;
-}
+.hosting-msg i { font-size: 1rem; }
 
-/* المميزات */
 .promo-features {
   display: flex;
   flex-direction: column;
@@ -781,211 +840,17 @@ html, body {
   justify-content: center;
 }
 
-.feature-item i {
-  color: var(--wa-color);
-  font-size: 1rem;
-}
+.feature-item i { color: var(--wa-color); font-size: 1rem; }
 
-/* أنيميشن الظهور */
-@keyframes slideInUp {
-  from {
-    transform: translateY(100px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
+@keyframes slideInUp { from { transform: translateY(100px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+@keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+@keyframes slideOutDown { from { transform: translateY(0); opacity: 1; } to { transform: translateY(100px); opacity: 0; } }
 
-/* أنيميشن النبض */
-@keyframes pulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-}
-
-/* أنيميشن الإخفاء */
-@keyframes slideOutDown {
-  from {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  to {
-    transform: translateY(100px);
-    opacity: 0;
-  }
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   📱 Responsive - استجابة الشاشات
-   ═══════════════════════════════════════════════════════════════ */
-
-/* الشاشات الصغيرة جداً (أقل من 360px) */
-@media (max-width: 360px) {
-  .main-header {
-    height: 65px;
-    padding: 0 8px;
-    gap: 4px;
-  }
-
-  .menu-btn, .wa-btn {
-    width: 40px;
-    height: 40px;
-    font-size: 1rem;
-  }
-
-  .guide-name {
-    font-size: 0.85rem;
-  }
-
-  .guide-sub {
-    font-size: 0.6rem;
-  }
-
-  .gov-logo {
-    height: 22px;
-  }
-
-  .lic-number {
-    font-size: 0.6rem;
-  }
-
-  .lic-label {
-    font-size: 0.45rem;
-  }
-
-  .license-card {
-    padding: 3px 6px;
-    gap: 4px;
-  }
-}
-
-/* الهواتف العادية (أقل من 480px) */
-@media (max-width: 480px) {
-  .main-header {
-    height: 68px;
-  }
-
-  .menu-btn, .wa-btn {
-    width: 42px;
-    height: 42px;
-  }
-
-  .guide-name {
-    font-size: 0.85rem;
-  }
-
-  .gov-logo {
-    height: 24px;
-  }
-
-  .lic-number {
-    font-size: 0.65rem;
-  }
-
-  .lic-label {
-    font-size: 0.48rem;
-  }
-
-  .section-title {
-    font-size: 1.5rem;
-  }
-
-  .cards-grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* Footer responsive */
-  .footer-title {
-    font-size: 1.5rem;
-  }
-
-  .footer-logo {
-    height: 45px;
-  }
-
-  .footer-middle {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-
-  .footer-social-link {
-    width: 45px;
-    height: 45px;
-    font-size: 1.2rem;
-  }
-
-  /* Promo Card responsive */
-  .promo-box {
-    width: 92%;
-    right: 4%;
-    left: 4%;
-    bottom: 20px;
-  }
-
-  .promo-title {
-    font-size: 1rem;
-  }
-
-  .price-new {
-    font-size: 1.75rem;
-  }
-
-  .promo-cta-btn {
-    padding: 14px;
-    font-size: 0.95rem;
-  }
-}
-
-/* التابلت (481px إلى 768px) */
-@media (min-width: 481px) and (max-width: 768px) {
-  .main-header {
-    height: 72px;
-  }
-
-  .menu-btn, .wa-btn {
-    width: 44px;
-    height: 44px;
-  }
-
-  .guide-name {
-    font-size: 1rem;
-  }
-
-  /* Footer responsive - Tablet */
-  .footer-middle {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* للشاشات الصغيرة جداً - Promo Card */
-@media (max-width: 360px) {
-  .promo-box {
-    bottom: 10px;
-  }
-
-  .promo-body {
-    padding: 20px 15px;
-  }
-
-  .promo-icon {
-    width: 50px;
-    height: 50px;
-    font-size: 1.5rem;
-  }
-
-  .promo-features {
-    font-size: 0.8rem;
-  }
-}
-
-/* ═══════════════════════════════════════════════════════════════
-   🎯 BEKAREM FOOTER - فوتر بيكارم للأعمال الذكية
-   ═══════════════════════════════════════════════════════════════ */
+/* 
+====================================================================
+   BEKAREM FOOTER (فوتر بيكارم)
+====================================================================
+*/
 
 .bekarem-footer {
   background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
@@ -993,7 +858,6 @@ html, body {
   padding: 50px 20px 30px;
   text-align: center;
   direction: rtl;
-  font-family: 'Tajawal', sans-serif;
   position: relative;
   overflow: hidden;
 }
@@ -1005,16 +869,10 @@ html, body {
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg,
-    var(--secondary-color) 0%,
-    var(--primary-color) 50%,
-    var(--wa-color) 100%);
+  background: linear-gradient(90deg, var(--secondary-color) 0%, var(--primary-color) 50%, var(--wa-color) 100%);
 }
 
-/* Badge العرض الخاص */
-.bekarem-badge-container {
-  margin-bottom: 30px;
-}
+.bekarem-badge-container { margin-bottom: 30px; }
 
 .bekarem-offer-badge {
   display: inline-flex;
@@ -1030,30 +888,11 @@ html, body {
   animation: pulseGlow 2s infinite;
 }
 
-.bekarem-offer-badge i {
-  font-size: 1.2rem;
-  animation: bounce 1.5s infinite;
-}
+.bekarem-offer-badge i { font-size: 1.2rem; animation: bounce 1.5s infinite; }
 
-@keyframes pulseGlow {
-  0%, 100% {
-    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
-  }
-  50% {
-    box-shadow: 0 8px 35px rgba(255, 107, 107, 0.6);
-  }
-}
+@keyframes pulseGlow { 0%, 100% { box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4); } 50% { box-shadow: 0 8px 35px rgba(255, 107, 107, 0.6); } }
+@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
 
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
-}
-
-/* اسم العلامة التجارية */
 .bekarem-brand-name {
   display: block;
   font-size: 2.2rem;
@@ -1066,7 +905,6 @@ html, body {
   text-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
 }
 
-/* الوصف */
 .bekarem-description {
   font-size: 1.1rem;
   line-height: 1.8;
@@ -1076,23 +914,15 @@ html, body {
   padding: 0 20px;
 }
 
-.bekarem-description strong {
-  color: #ffd700;
-  font-weight: 800;
-}
+.bekarem-description strong { color: #ffd700; font-weight: 800; }
 
-/* الفاصل */
 .bekarem-divider {
   width: 60px;
   height: 3px;
-  background: linear-gradient(90deg,
-    transparent 0%,
-    var(--wa-color) 50%,
-    transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, var(--wa-color) 50%, transparent 100%);
   margin: 30px auto;
 }
 
-/* معلومات الاستضافة */
 .bekarem-hosting-info {
   display: inline-flex;
   align-items: center;
@@ -1106,12 +936,8 @@ html, body {
   margin-bottom: 25px;
 }
 
-.bekarem-hosting-info i {
-  color: var(--wa-color);
-  font-size: 1.1rem;
-}
+.bekarem-hosting-info i { color: var(--wa-color); font-size: 1.1rem; }
 
-/* حقوق النشر */
 .bekarem-copyright {
   font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.6);
@@ -1120,19 +946,69 @@ html, body {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Responsive */
+/* 
+====================================================================
+   RESPONSIVE (استجابة الشاشات)
+====================================================================
+*/
+
+/* Tabet & Larger */
+@media (min-width: 769px) {
+    .about-container { flex-wrap: nowrap; }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    .section-title { font-size: 1.8rem; }
+    .hero-title { font-size: 2.2rem; }
+    .hero-subtitle { font-size: 1.1rem; }
+    .footer-middle { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Mobile */
 @media (max-width: 480px) {
-  .bekarem-brand-name {
-    font-size: 1.8rem;
-  }
+  .main-header { height: 68px; }
+  .menu-btn, .wa-btn { width: 42px; height: 42px; }
+  .guide-name { font-size: 0.85rem; }
+  .gov-logo { height: 24px; }
+  .lic-number { font-size: 0.65rem; }
+  .lic-label { font-size: 0.48rem; }
+  
+  .content-section { padding: 40px 15px; }
+  .section-title { font-size: 1.6rem; }
+  .hero-title { font-size: 1.8rem; }
+  
+  .about-text h3 { font-size: 1.5rem; }
+  .about-text p { font-size: 1rem; }
 
-  .bekarem-description {
-    font-size: 0.95rem;
-    padding: 0 10px;
-  }
+  .footer-title { font-size: 1.5rem; }
+  .footer-logo { height: 45px; }
+  .footer-middle { grid-template-columns: 1fr; gap: 30px; }
+  .footer-social-link { width: 45px; height: 45px; font-size: 1.2rem; }
 
-  .bekarem-offer-badge {
-    font-size: 0.8rem;
-    padding: 10px 20px;
-  }
+  .promo-box { width: 92%; right: 4%; left: 4%; bottom: 20px; }
+  .promo-title { font-size: 1rem; }
+  .price-new { font-size: 1.75rem; }
+  .promo-cta-btn { padding: 14px; font-size: 0.95rem; }
+
+  .bekarem-brand-name { font-size: 1.8rem; }
+  .bekarem-description { font-size: 0.95rem; padding: 0 10px; }
+  .bekarem-offer-badge { font-size: 0.8rem; padding: 10px 20px; }
+}
+
+/* Small Mobile */
+@media (max-width: 360px) {
+  .main-header { height: 65px; padding: 0 8px; gap: 4px; }
+  .menu-btn, .wa-btn { width: 40px; height: 40px; font-size: 1rem; }
+  .guide-name { font-size: 0.85rem; }
+  .guide-sub { font-size: 0.6rem; }
+  .gov-logo { height: 22px; }
+  .lic-number { font-size: 0.6rem; }
+  .lic-label { font-size: 0.45rem; }
+  .license-card { padding: 3px 6px; gap: 4px; }
+  
+  .promo-box { bottom: 10px; }
+  .promo-body { padding: 20px 15px; }
+  .promo-icon { width: 50px; height: 50px; font-size: 1.5rem; }
+  .promo-features { font-size: 0.8rem; }
 }
