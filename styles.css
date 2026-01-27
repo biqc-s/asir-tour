@@ -1179,22 +1179,75 @@ html, body {
   width: 100%;
 }
 
+/* الصورة الشخصية */
+.about-profile-image {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 50px;
+  animation: fadeInScale 0.8s ease-out;
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.about-profile-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid white;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4),
+              0 0 0 10px rgba(255, 255, 255, 0.1),
+              0 0 40px rgba(255, 215, 0, 0.3);
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.about-profile-image img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5),
+              0 0 0 10px rgba(255, 255, 255, 0.2),
+              0 0 60px rgba(255, 215, 0, 0.5);
+}
+
+.profile-border {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border-radius: 50%;
+  background: linear-gradient(135deg,
+    var(--wa-color) 0%,
+    var(--secondary-color) 50%,
+    var(--primary-color) 100%);
+  z-index: 1;
+  animation: rotate360 4s linear infinite;
+}
+
+@keyframes rotate360 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 /* رأس القسم */
 .about-header {
   text-align: center;
   margin-bottom: 60px;
-}
-
-.about-label {
-  display: inline-block;
-  background: linear-gradient(135deg, var(--wa-color) 0%, #34E77D 100%);
-  color: white;
-  padding: 8px 25px;
-  border-radius: 30px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 15px rgba(39, 161, 72, 0.3);
 }
 
 .about-title {
@@ -1358,6 +1411,12 @@ html, body {
     min-height: auto;
   }
 
+  .about-profile-image {
+    width: 160px;
+    height: 160px;
+    margin-bottom: 40px;
+  }
+
   .about-title {
     font-size: 2.2rem;
   }
@@ -1411,13 +1470,18 @@ html, body {
 }
 
 @media (max-width: 480px) {
-  .about-title {
-    font-size: 1.8rem;
+  .about-profile-image {
+    width: 140px;
+    height: 140px;
+    margin-bottom: 35px;
   }
 
-  .about-label {
-    font-size: 0.8rem;
-    padding: 6px 20px;
+  .about-profile-image img {
+    border-width: 4px;
+  }
+
+  .about-title {
+    font-size: 1.8rem;
   }
 
   .about-text-card {
