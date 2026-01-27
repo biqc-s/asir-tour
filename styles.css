@@ -1012,3 +1012,82 @@ html, body {
   .promo-icon { width: 50px; height: 50px; font-size: 1.5rem; }
   .promo-features { font-size: 0.8rem; }
 }
+/* ═══════════════════════════════════════════════════════════════
+   👤 ABOUT SECTION - قسم من أنا (خلفية غامقة)
+   ═══════════════════════════════════════════════════════════════ */
+
+.about-section {
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  padding: 80px 20px;
+  min-height: 500px;
+}
+
+/* طبقة تغميق على الخلفية */
+.about-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);  /* ← درجة التغميق (0.6 = 60%) */
+  z-index: 1;
+}
+
+/* المحتوى فوق الخلفية */
+.about-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  color: #ffffff;  /* ← نص أبيض */
+}
+
+/* العنوان على خلفية غامقة */
+.about-section .section-title {
+  color: #ffffff;  /* ← أبيض */
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);  /* ← ظل للنص */
+}
+
+/* النص على خلفية غامقة */
+.about-section p {
+  color: rgba(255, 255, 255, 0.95);  /* ← أبيض شفاف */
+  font-size: 1.2rem;
+  line-height: 2;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* تمييز النص المهم */
+.about-section strong {
+  color: #ffd700;  /* ← ذهبي */
+  font-weight: 800;
+}
+
+/* الأزرار على خلفية غامقة */
+.about-section .btn {
+  background: linear-gradient(135deg, var(--wa-color) 0%, #1e8e3e 100%);
+  color: white;
+  box-shadow: 0 8px 25px rgba(39, 161, 72, 0.4);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.about-section .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(39, 161, 72, 0.6);
+}
+
+/* البطاقات على خلفية غامقة */
+.about-section .card {
+  background: rgba(255, 255, 255, 0.1);  /* ← خلفية شفافة */
+  backdrop-filter: blur(10px);  /* ← تأثير الضباب */
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.about-section .card-title {
+  color: #ffd700;  /* ← ذهبي للعناوين */
+}
