@@ -90,7 +90,7 @@ html, body {
 }
 
 .menu-btn:active {
-  background: #e8e9eb;
+  background: var(--white-color);
   transform: scale(0.95);
 }
 
