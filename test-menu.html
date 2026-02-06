@@ -1,177 +1,0 @@
-<!-- ═══════════════════════════════════════════════════════════════
-   🧪 ملف اختبار بسيط - Test File
-
-   استخدم هذا الملف لاختبار الكود محلياً قبل رفعه على Carrd
-   ═══════════════════════════════════════════════════════════════ -->
-
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>اختبار المنيو</title>
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="https://raw.githack.com/biqc-s/asir-tour/refs/heads/claude/debug-carrd-integration-fOtCT/styles.css">
-
-    <!-- JavaScript -->
-    <script src="https://raw.githack.com/biqc-s/asir-tour/refs/heads/claude/debug-carrd-integration-fOtCT/script.js"></script>
-</head>
-<body>
-
-<!-- رأس الصفحة -->
-<header class="main-header">
-  <div class="nav-container">
-    <!-- زر القائمة -->
-    <button class="menu-btn" id="menuButton">
-      <i class="fas fa-bars-staggered"></i>
-    </button>
-
-    <!-- اسم المرشد -->
-    <div class="guide-brand">
-      <span class="guide-name">عبدالله السلمان</span>
-      <span class="guide-sub">مرشد سياحي مرخص</span>
-    </div>
-
-    <!-- بطاقة الترخيص -->
-    <div class="license-card">
-      <div class="lic-info">
-        <span class="lic-label">ترخيص رقم</span>
-        <span class="lic-number">12345678</span>
-      </div>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Coat_of_arms_of_Saudi_Arabia.svg/220px-Coat_of_arms_of_Saudi_Arabia.svg.png"
-           alt="شعار السعودية"
-           class="gov-logo">
-    </div>
-
-    <!-- زر الواتساب -->
-    <a href="https://wa.me/966XXXXXXXXX"
-       class="wa-btn"
-       target="_blank"
-       aria-label="واتساب">
-      <i class="fab fa-whatsapp" style="font-size: 1.3rem;"></i>
-    </a>
-  </div>
-</header>
-
-<!-- طبقة التغطية -->
-<div id="overlay"></div>
-
-<!-- القائمة الجانبية -->
-<aside class="sidebar" id="sidebar">
-  <button class="sidebar-close-btn" id="closeButton">
-    <i class="fas fa-xmark"></i>
-  </button>
-
-  <ul class="sidebar-list">
-    <li>
-      <a href="#home">
-        <i class="fas fa-house"></i>
-        <span>الرئيسية</span>
-      </a>
-    </li>
-    <li>
-      <a href="#about">
-        <i class="fas fa-user"></i>
-        <span>من أنا</span>
-      </a>
-    </li>
-    <li>
-      <a href="#services">
-        <i class="fas fa-briefcase"></i>
-        <span>خدماتي</span>
-      </a>
-    </li>
-    <li>
-      <a href="#gallery">
-        <i class="fas fa-images"></i>
-        <span>معرض الصور</span>
-      </a>
-    </li>
-    <li>
-      <a href="#contact">
-        <i class="fas fa-phone"></i>
-        <span>تواصل معي</span>
-      </a>
-    </li>
-  </ul>
-</aside>
-
-<!-- محتوى الصفحة -->
-<div class="content-wrapper">
-  <div class="content-section">
-    <h1 class="section-title">صفحة اختبار</h1>
-    <p style="text-align: center; font-size: 1.2rem;">
-      اضغط على زر المنيو (☰) في الأعلى لاختبار القائمة الجانبية
-    </p>
-
-    <div style="text-align: center; margin-top: 40px; padding: 20px; background: white; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-      <h2 style="color: #1B365D; margin-bottom: 20px;">🧪 اختبار سريع</h2>
-      <p>افتح Console (اضغط F12) وابحث عن:</p>
-      <ul style="list-style: none; padding: 0; margin-top: 20px;">
-        <li style="padding: 10px; border-bottom: 1px solid #eee;">✅ تم تحميل السكريبت بنجاح</li>
-        <li style="padding: 10px; border-bottom: 1px solid #eee;">✅ تم العثور على عناصر القائمة</li>
-        <li style="padding: 10px; border-bottom: 1px solid #eee;">✅ تم تفعيل القائمة الجانبية</li>
-        <li style="padding: 10px;">✨ تم تحميل جميع السكريبتات</li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-<!-- البطاقة الترويجية -->
-<div class="promo-box" id="promoCard">
-  <div class="promo-banner">
-    <span>✨ عرض بيكارم الخاص</span>
-    <button class="promo-close-btn" onclick="closePromo()" aria-label="إغلاق">
-      <i class="fas fa-xmark"></i>
-    </button>
-  </div>
-
-  <div class="promo-body">
-    <div class="promo-icon">
-      <i class="fas fa-sparkles"></i>
-    </div>
-
-    <h3 class="promo-title">موقعك الاحترافي بانتظارك!</h3>
-    <p class="promo-description">انطلق بهوية رقمية رسمية وموثوقة</p>
-
-    <div class="price-container">
-      <span class="price-new">399 ريال</span>
-      <span class="price-old">1,500 ريال</span>
-      <span class="price-badge">خصم 73%</span>
-    </div>
-
-    <a href="https://wa.me/966XXXXXXXXX"
-       class="promo-cta-btn"
-       target="_blank">
-      <i class="fab fa-whatsapp"></i>
-      اطلب موقعك الآن
-    </a>
-
-    <div class="hosting-msg">
-      <i class="fas fa-server"></i>
-      <span>يشمل استضافة التشغيل مجاناً لمدة سنة</span>
-    </div>
-
-    <div class="promo-features">
-      <div class="feature-item">
-        <i class="fas fa-check-circle"></i>
-        <span>تصميم احترافي</span>
-      </div>
-      <div class="feature-item">
-        <i class="fas fa-check-circle"></i>
-        <span>دومين مجاني</span>
-      </div>
-      <div class="feature-item">
-        <i class="fas fa-check-circle"></i>
-        <span>دعم فني مجاني</span>
-      </div>
-    </div>
-  </div>
-</div>
-
-</body>
-</html>
