@@ -11,8 +11,10 @@ asir-tour/
 ├── styles.css               # جميع التنسيقات
 ├── script.js                # جميع السكريبتات
 ├── header-html-only.html    # كود الهيدر
-├── footer-html-only.html    # كود الفوتر
-└── promo-card.html          # البطاقة الترويجية (اختياري)
+├── footer-html-only.html    # كود الفوتر العادي
+├── bekarem-footer.html      # كود فوتر بيكارم (اختياري)
+├── promo-card.html          # البطاقة الترويجية (اختياري)
+└── about-section.html       # قسم "من أنا" (اختياري)
 ```
 
 ---
@@ -123,7 +125,7 @@ git push origin claude/debug-carrd-integration-fOtCT
 ### البطاقة الترويجية:
 - ✅ Fixed في الزاوية اليمنى
 - ✅ Slide-in/out animation
-- ✅ localStorage (لا تظهر بعد الإغلاق)
+- ✅ تظهر مرة أخرى عند Refresh
 - ✅ Responsive
 
 ---
@@ -147,7 +149,7 @@ https://raw.githack.com/biqc-s/asir-tour/refs/heads/claude/debug-carrd-integrati
 - ✅ **CSS و JS منفصلين**: سهل التعديل مستقبلاً
 - ✅ **HTML في embeds**: كل قسم منفصل
 - ✅ **GitHack CDN**: تحديثات سريعة (1-2 دقيقة)
-- ✅ **localStorage**: البطاقة الترويجية لا تظهر بعد الإغلاق
+- ✅ **البطاقة الترويجية**: تختفي عند الإغلاق وتظهر مرة أخرى عند تحديث الصفحة
 
 ---
 
